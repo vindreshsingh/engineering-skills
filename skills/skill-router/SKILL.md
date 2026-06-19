@@ -26,6 +26,9 @@ Match the task to a skill by intent:
 | Turn a design into code | [[design-handoff]] |
 | Make React/Next.js fast | [[react-patterns]] |
 | Design an API/module/schema boundary | [[interface-design]] |
+| Design a database schema or fix queries | [[data-modeling]] |
+| Build an AI/LLM-powered feature | [[llm-feature-engineering]] |
+| Make code correct under failure (timeouts, retries) | [[resilience]] |
 | Verify a web change in the browser | [[browser-checks]] |
 | Debug a failure or unexpected behavior | [[fault-recovery]] |
 | Review a change before merge | [[review-gate]] |
@@ -37,19 +40,22 @@ Match the task to a skill by intent:
 | Change a schema/API/dependency others use | [[migration-path]] |
 | Record a decision or fix docs | [[decision-docs]] |
 | Ship to production | [[launch-readiness]] |
+| Add logging, metrics, tracing, alerts | [[observability]] |
+| Handle a production incident or postmortem | [[incident-response]] |
 
 ## Lifecycle Order
 
 When a task spans phases, move through them rather than jumping to code:
 
-**Define** → **Plan** → **Build** → **Verify** → **Review** → **Ship**
+**Define** → **Plan** → **Build** → **Verify** → **Review** → **Ship** → **Operate**
 
 - Define: idea-shaping, product-brief, spec-first
 - Plan: work-planning
-- Build: incremental-delivery, test-first, context-curation, source-first, ui-craft, react-patterns, interface-design, design-handoff
+- Build: incremental-delivery, test-first, context-curation, source-first, ui-craft, react-patterns, interface-design, design-handoff, resilience, data-modeling, llm-feature-engineering
 - Verify: browser-checks, fault-recovery
 - Review: review-gate, simplify, hardening, perf-budget
 - Ship: git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
+- Operate: observability, incident-response
 
 ## Rules of Use
 

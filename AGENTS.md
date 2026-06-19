@@ -31,6 +31,11 @@ Map what the user is asking for to a skill:
 - Verify a web change → `browser-checks`
 - Security / untrusted input / auth → `hardening`
 - Something slow → `perf-budget`
+- Failure handling (timeouts, retries, idempotency) → `resilience`
+- Database schema / queries → `data-modeling`
+- Building an AI/LLM feature → `llm-feature-engineering`
+- Logging, metrics, tracing, alerts → `observability`
+- A production outage / postmortem → `incident-response`
 - Git work → `git-flow`; CI/CD → `pipeline-ops`
 - Changing something others depend on → `migration-path`
 - Decisions / docs → `decision-docs`
@@ -41,7 +46,7 @@ Map what the user is asking for to a skill:
 
 Most non-trivial work moves through phases — don't jump straight to code:
 
-**Define → Plan → Build → Verify → Review → Ship**
+**Define → Plan → Build → Verify → Review → Ship → Operate**
 
 ## Agents and references
 

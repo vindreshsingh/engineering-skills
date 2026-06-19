@@ -39,10 +39,12 @@ Load skills by phase as the work moves through them:
 ```
 Define   → idea-shaping, product-brief, spec-first
 Plan     → work-planning
-Build    → incremental-delivery, test-first, ui-craft, react-patterns, interface-design, design-handoff
+Build    → incremental-delivery, test-first, ui-craft, react-patterns, interface-design,
+           design-handoff, resilience, data-modeling, llm-feature-engineering
 Verify   → browser-checks, fault-recovery
 Review   → review-gate, simplify, hardening, perf-budget
 Ship     → git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
+Operate  → observability, incident-response
 ```
 
 Don't load everything at once — it wastes context. Pull in the skill for the current step (see the
@@ -59,11 +61,16 @@ want a focused pass: "Review this diff using the code-reviewer persona."
 
 | Command | Loads |
 |---------|-------|
+| `/idea` | idea-shaping |
 | `/spec` | spec-first |
 | `/plan` | work-planning |
 | `/build` | incremental-delivery + test-first |
 | `/test` | test-first |
+| `/debug` | fault-recovery |
 | `/review` | review-gate |
+| `/simplify` | simplify |
+| `/secure` | hardening |
+| `/perf` | perf-budget |
 | `/ship` | launch-readiness |
 
 ## Using the references

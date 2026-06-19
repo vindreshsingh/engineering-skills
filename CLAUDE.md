@@ -20,10 +20,11 @@ docs/           → Getting-started and skill-authoring guides
 - **Define:** idea-shaping, product-brief, spec-first
 - **Plan:** work-planning
 - **Build:** incremental-delivery, test-first, context-curation, source-first, ui-craft,
-  react-patterns, interface-design, design-handoff
+  react-patterns, interface-design, design-handoff, resilience, data-modeling, llm-feature-engineering
 - **Verify:** browser-checks, fault-recovery
 - **Review:** review-gate, simplify, hardening, perf-budget
 - **Ship:** git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
+- **Operate:** observability, incident-response
 - **Meta:** skill-router
 
 ## Conventions

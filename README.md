@@ -48,11 +48,14 @@ See [`docs/getting-started.md`](docs/getting-started.md) for per-tool setup.
 |---------|--------|
 | Define  | `spec-first`, `product-brief`, `idea-shaping` |
 | Plan    | `work-planning` |
-| Build   | `incremental-delivery`, `test-first`, `context-curation`, `source-first`, `ui-craft`, `react-patterns`, `interface-design`, `design-handoff` |
+| Build   | `incremental-delivery`, `test-first`, `context-curation`, `source-first`, `ui-craft`, `react-patterns`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `llm-feature-engineering` |
 | Verify  | `browser-checks`, `fault-recovery` |
 | Review  | `review-gate`, `simplify`, `hardening`, `perf-budget` |
 | Ship    | `git-flow`, `pipeline-ops`, `migration-path`, `decision-docs`, `launch-readiness` |
+| Operate | `observability`, `incident-response` |
 | Meta    | `skill-router` (routes a task to the right skill) |
+
+See [SKILLS.md](SKILLS.md) for the full auto-generated catalog with descriptions.
 
 ## Agent personas
 
