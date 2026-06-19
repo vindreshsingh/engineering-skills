@@ -48,12 +48,12 @@ See [`docs/getting-started.md`](docs/getting-started.md) for per-tool setup.
 |---------|--------|
 | Define  | `spec-first`, `product-brief`, `idea-shaping` |
 | Plan    | `work-planning` |
-| Build   | `incremental-delivery`, `test-first`, `context-curation`, `source-first`, `ui-craft`, `react-patterns`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `llm-feature-engineering` |
+| Build   | `incremental-delivery`, `test-first`, `context-curation`, `source-first`, `ui-craft`, `accessibility`, `react-patterns`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `caching-strategy`, `llm-feature-engineering` |
 | Verify  | `browser-checks`, `fault-recovery` |
-| Review  | `review-gate`, `simplify`, `hardening`, `perf-budget` |
+| Review  | `review-gate`, `simplify`, `hardening`, `perf-budget`, `dependency-hygiene` |
 | Ship    | `git-flow`, `pipeline-ops`, `migration-path`, `decision-docs`, `launch-readiness` |
 | Operate | `observability`, `incident-response` |
-| Meta    | `skill-router` (routes a task to the right skill) |
+| Meta    | `skill-router` (routes a task to the right skill), `skill-creator` (author new skills) |
 
 See [SKILLS.md](SKILLS.md) for the full auto-generated catalog with descriptions.
 

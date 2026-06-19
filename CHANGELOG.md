@@ -3,6 +3,13 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-06-19
+
+### Added
+- Four skills (33 total): `caching-strategy`, `dependency-hygiene`, `accessibility` (promoted from the
+  reference checklist into a process skill), and `skill-creator` (a dogfooded meta-skill for authoring
+  skills). Routing, lifecycle, and indexes updated accordingly.
+
 ## [1.0.0] - 2026-06-19
 
 ### Added

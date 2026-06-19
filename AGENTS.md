@@ -27,13 +27,15 @@ Map what the user is asking for to a skill:
 - Code review → `review-gate`
 - Refactor / cleanup → `simplify`
 - API / module / schema boundary → `interface-design`
-- UI work → `ui-craft`; design to code → `design-handoff`; React/Next perf → `react-patterns`
+- UI work → `ui-craft`; accessibility → `accessibility`; design to code → `design-handoff`; React/Next perf → `react-patterns`
 - Verify a web change → `browser-checks`
 - Security / untrusted input / auth → `hardening`
-- Something slow → `perf-budget`
+- Something slow → `perf-budget`; caching → `caching-strategy`
 - Failure handling (timeouts, retries, idempotency) → `resilience`
 - Database schema / queries → `data-modeling`
 - Building an AI/LLM feature → `llm-feature-engineering`
+- Adding / upgrading dependencies → `dependency-hygiene`
+- Writing or improving a skill in this repo → `skill-creator`
 - Logging, metrics, tracing, alerts → `observability`
 - A production outage / postmortem → `incident-response`
 - Git work → `git-flow`; CI/CD → `pipeline-ops`

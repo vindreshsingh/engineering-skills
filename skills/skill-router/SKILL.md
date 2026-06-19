@@ -23,6 +23,7 @@ Match the task to a skill by intent:
 | Decide what to put in an agent's context | [[context-curation]] |
 | Rely on an API/library's real behavior | [[source-first]] |
 | Build or change user-facing UI | [[ui-craft]] |
+| Make UI usable by everyone (a11y) | [[accessibility]] |
 | Turn a design into code | [[design-handoff]] |
 | Make React/Next.js fast | [[react-patterns]] |
 | Design an API/module/schema boundary | [[interface-design]] |
@@ -35,6 +36,8 @@ Match the task to a skill by intent:
 | Clean up / refactor for clarity | [[simplify]] |
 | Handle untrusted input, auth, secrets | [[hardening]] |
 | Fix something slow | [[perf-budget]] |
+| Add caching to an expensive read | [[caching-strategy]] |
+| Add or upgrade a dependency | [[dependency-hygiene]] |
 | Commit, branch, merge, recover in git | [[git-flow]] |
 | Set up or fix CI/CD | [[pipeline-ops]] |
 | Change a schema/API/dependency others use | [[migration-path]] |
@@ -42,6 +45,7 @@ Match the task to a skill by intent:
 | Ship to production | [[launch-readiness]] |
 | Add logging, metrics, tracing, alerts | [[observability]] |
 | Handle a production incident or postmortem | [[incident-response]] |
+| Write or improve a skill in this repo | [[skill-creator]] |
 
 ## Lifecycle Order
 
@@ -51,11 +55,12 @@ When a task spans phases, move through them rather than jumping to code:
 
 - Define: idea-shaping, product-brief, spec-first
 - Plan: work-planning
-- Build: incremental-delivery, test-first, context-curation, source-first, ui-craft, react-patterns, interface-design, design-handoff, resilience, data-modeling, llm-feature-engineering
+- Build: incremental-delivery, test-first, context-curation, source-first, ui-craft, accessibility, react-patterns, interface-design, design-handoff, resilience, data-modeling, caching-strategy, llm-feature-engineering
 - Verify: browser-checks, fault-recovery
-- Review: review-gate, simplify, hardening, perf-budget
+- Review: review-gate, simplify, hardening, perf-budget, dependency-hygiene
 - Ship: git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
 - Operate: observability, incident-response
+- Meta: skill-router, skill-creator
 
 ## Rules of Use
 

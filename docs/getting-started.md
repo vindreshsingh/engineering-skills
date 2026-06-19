@@ -39,8 +39,9 @@ Load skills by phase as the work moves through them:
 ```
 Define   → idea-shaping, product-brief, spec-first
 Plan     → work-planning
-Build    → incremental-delivery, test-first, ui-craft, react-patterns, interface-design,
-           design-handoff, resilience, data-modeling, llm-feature-engineering
+Build    → incremental-delivery, test-first, ui-craft, accessibility, react-patterns,
+           interface-design, design-handoff, resilience, data-modeling, caching-strategy,
+           llm-feature-engineering
 Verify   → browser-checks, fault-recovery
 Review   → review-gate, simplify, hardening, perf-budget
 Ship     → git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
