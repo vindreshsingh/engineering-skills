@@ -59,9 +59,15 @@ See [SKILLS.md](SKILLS.md) for the full auto-generated catalog with descriptions
 
 ## Agent personas
 
+Three general reviewer personas:
+
 - `code-reviewer` — five-dimension review (correctness, readability, architecture, security, performance)
 - `security-auditor` — vulnerability detection, threat modeling, secure-coding review
 - `test-engineer` — test strategy, test writing, coverage analysis
+
+Plus a full **25-role SDLC org** spanning 8 layers (product, architecture, eng management, development,
+quality, DevOps/platform, governance, release) — each persona drives the relevant skills. See
+[docs/agent-org.md](docs/agent-org.md) for the org map and how work flows between roles.
 
 ## Repository layout
 

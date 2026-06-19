@@ -3,6 +3,14 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [1.2.0] - 2026-06-19
+
+### Added
+- A 25-role SDLC agent org across 8 layers (product/business, architecture, engineering management,
+  development, quality, DevOps/platform, governance, release) — 24 new persona files in `agents/`, each
+  wired to the skills it drives, plus `docs/agent-org.md` mapping layers, outputs, and handoffs.
+- Plugin manifest now loads all agents from the `agents/` directory.
+
 ## [1.1.0] - 2026-06-19
 
 ### Added
