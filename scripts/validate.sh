@@ -10,6 +10,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 errors=0
+skill_count=0
 fail() { printf '  ✗ %s\n' "$1"; errors=$((errors + 1)); }
 
 # Read a frontmatter field (first match) from a file's top YAML block.
@@ -27,19 +28,23 @@ frontmatter_field() {
 required_sections=("When to Use" "Process" "Common Rationalizations" "Red Flags" "Verification")
 # Meta-skills are routers/indexes, not step-by-step processes — exempt from the
 # process-section check (frontmatter is still validated).
-meta_skills=" skill-router "
+meta_skills=" skill-router agent-guardrails "
 
-echo "Validating skills..."
-for dir in skills/*/; do
+validate_skill() {
+  local dir="$1"
+  local name
   name="$(basename "$dir")"
-  file="${dir}SKILL.md"
-  if [ ! -f "$file" ]; then fail "$name: missing SKILL.md"; continue; fi
+  local file="${dir}SKILL.md"
+  skill_count=$((skill_count + 1))
+
+  if [ ! -f "$file" ]; then fail "$name: missing SKILL.md"; return; fi
 
   if [ "$(head -1 "$file")" != "---" ]; then
     fail "$name: SKILL.md must start with YAML frontmatter (---)"
-    continue
+    return
   fi
 
+  local fname fdesc
   fname="$(frontmatter_field "$file" name)"
   fdesc="$(frontmatter_field "$file" description)"
 
@@ -49,17 +54,32 @@ for dir in skills/*/; do
     fail "$name: frontmatter name '$fname' != directory name"
   fi
 
-  case "$meta_skills" in *" $name "*) continue ;; esac
+  case "$meta_skills" in *" $name "*) return ;; esac
 
+  local section
   for section in "${required_sections[@]}"; do
     grep -qE "^##[[:space:]]+$section" "$file" || fail "$name: missing section '## $section'"
   done
+}
+
+echo "Validating skills..."
+for dir in skills/*/; do
+  name="$(basename "$dir")"
+  if [ "$name" = "marketing" ]; then
+    for sub in skills/marketing/*/; do
+      [ -d "$sub" ] || continue
+      validate_skill "$sub"
+    done
+    continue
+  fi
+  validate_skill "$dir"
 done
 
 echo "Validating agents..."
-for file in agents/*.md; do
+for file in agents/sdlc/*.md agents/marketing/*.md; do
   [ -f "$file" ] || continue
-  base="$(basename "$file")"
+  base="${file#agents/}"
+  case "$base" in README.md|marketing/README.md|sdlc/README.md) continue ;; esac
   if [ "$(head -1 "$file")" != "---" ]; then
     fail "agents/$base: must start with YAML frontmatter (---)"; continue
   fi
@@ -79,8 +99,7 @@ done
 
 echo
 if [ "$errors" -eq 0 ]; then
-  count="$(find skills -maxdepth 1 -mindepth 1 -type d | wc -l | tr -d ' ')"
-  echo "✓ All checks passed ($count skills)."
+  echo "✓ All checks passed ($skill_count skills)."
   exit 0
 else
   echo "✗ $errors problem(s) found."

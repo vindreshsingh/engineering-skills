@@ -3,6 +3,53 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [1.4.1] - 2026-06-19
+
+### Added
+- Skill **`micro-interactions`** — click/tap feedback and React view transitions; checklist in
+  `references/micro-interactions-checklist.md`. Wired to frontend-developer, ux-designer, skill-router.
+- Skill **`version-upgrade`** — researched package upgrades (web search, release notes, breaking
+  changes, fix plan); checklist in `references/version-upgrade-checklist.md`. Wired to
+  dependency-analyzer, dependency-hygiene, skill-router.
+
+### Changed
+- Removed discovery symlinks — agents and marketing skills live in one path only
+  (`agents/sdlc/`, `agents/marketing/`, `skills/marketing/`).
+- Deleted `scripts/sync-plugin-symlinks.sh`; plugin uses explicit nested paths.
+
+## [1.4.0] - 2026-06-19
+
+### Added
+- **SDLC grouping:** agents moved to `agents/sdlc/`; prompts to `prompts/agents/sdlc/`.
+- New skills: `ux-design`, `finops-budget`, `i18n-l10n`, `mobile-patterns` (48 skills total).
+- New agents: `ux-designer`, `technical-writer` in `agents/sdlc/`.
+- Reference checklists: launch-readiness, git-flow, incident-response, pipeline-ops, migration-path,
+  work-planning.
+- Slash command `/e2e` for `e2e-testing`.
+- Plugin symlinks extended for `agents/sdlc/`; plugin v1.4.0.
+
+### Changed
+- `sync-plugin-symlinks.sh` links both SDLC and marketing agents.
+- Docs and indexes updated for nested agent paths.
+
+## [1.3.0] - 2026-06-19
+
+### Added
+- **Marketing team** (8 skills, 8 agents) grouped under `marketing/`, `skills/marketing/`,
+  `agents/marketing/`, with references and copy-paste prompts.
+- New engineering skills: `product-grooming`, `e2e-testing`, `technical-writing` (36 engineering total).
+- Marketing expansion: `paid-ads`, `email-nurture`, `referral-loop` + 3 agents (8 marketing total).
+- **44 skills** total; plugin v1.3.0.
+- Slash commands: `/groom`, `/grow`, `/incident`, `/migrate`, `/a11y`, `/observe`.
+- `scripts/sync-plugin-symlinks.sh` and [docs/plugin-discovery.md](docs/plugin-discovery.md) for
+  Claude Code discovery of nested marketing components.
+- [docs/sdlc-walkthrough.md](docs/sdlc-walkthrough.md) — end-to-end feature example.
+
+### Changed
+- `plugin.json` v1.3.0 — explicit `skills/marketing` and `agents/marketing` paths.
+- README, getting-started, and agent-org updated for Grow phase and marketing team.
+- Fixed duplicate agent numbering in agent-org (Development layer 11–14).
+
 ## [1.2.0] - 2026-06-19
 
 ### Added

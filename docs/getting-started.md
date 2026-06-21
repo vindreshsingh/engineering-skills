@@ -26,8 +26,9 @@ people skip when rushed.
 
 ## Recommended minimal setup
 
-If you load nothing else, start with these three — they close the biggest quality gaps:
+If you load nothing else, start with these four — they close the biggest quality and safety gaps:
 
+0. `agent-guardrails` — never delete data, read secrets, or break security without explicit approval.
 1. `spec-first` — decide what to build before building it.
 2. `test-first` — prove it works.
 3. `review-gate` — check correctness and safety before merge.
@@ -46,15 +47,41 @@ Verify   → browser-checks, fault-recovery
 Review   → review-gate, simplify, hardening, perf-budget
 Ship     → git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
 Operate  → observability, incident-response
+Grow     → skills/marketing/* (see marketing/README.md)
 ```
 
 Don't load everything at once — it wastes context. Pull in the skill for the current step (see the
 `context-curation` skill).
 
+## Marketing team
+
+Post-launch growth uses a **separate marketing team** grouped under `marketing/`:
+
+- Guide: [marketing/README.md](../marketing/README.md)
+- Router: [marketing/SKILL.md](../marketing/SKILL.md)
+- Agents: [agents/marketing/](../agents/marketing/)
+- Prompts: [prompts/agents/marketing/](../prompts/agents/marketing/)
+
+Load paths: [plugin-discovery.md](plugin-discovery.md).
+
+**Full lifecycle example:** [sdlc-walkthrough.md](sdlc-walkthrough.md)
+
 ## Using the agents
 
-`agents/` holds reviewer personas (code-reviewer, security-auditor, test-engineer). Load one when you
-want a focused pass: "Review this diff using the code-reviewer persona."
+`agents/sdlc/` holds 30 SDLC role personas plus three focused reviewers (`code-reviewer`,
+`security-auditor`, `test-engineer`). Marketing: `agents/marketing/`. See [agent-org.md](agent-org.md).
+
+Load a persona when you want a role's perspective:
+
+```
+Act as the backend-developer agent. Follow agents/sdlc/backend-developer.md and prompts/agent-base.md.
+```
+
+Each persona lists **primary** and **secondary** skills. It loads `skills/<name>/SKILL.md` and follows
+that process — see [prompts/agent-base.md](../prompts/agent-base.md).
+
+**Copy-paste prompts:** [prompts/agents/sdlc/](../prompts/agents/sdlc/) and [prompts/agents/marketing/](../prompts/agents/marketing/)
+See [how-to-use-prompts.md](../prompts/how-to-use-prompts.md).
 
 ## Using the commands (Claude Code)
 
@@ -73,11 +100,18 @@ want a focused pass: "Review this diff using the code-reviewer persona."
 | `/secure` | hardening |
 | `/perf` | perf-budget |
 | `/ship` | launch-readiness |
+| `/groom` | product-grooming |
+| `/grow` | marketing router → `skills/marketing/*` |
+| `/incident` | incident-response |
+| `/migrate` | migration-path |
+| `/a11y` | accessibility |
+| `/e2e` | e2e-testing |
 
 ## Using the references
 
-`references/` holds supplementary checklists — testing patterns, and performance, security, and
-accessibility checklists — to use alongside the related skill.
+`references/` holds supplementary checklists — testing, performance, security, accessibility, plus
+phase checklists (launch-readiness, git-flow, incident-response, pipeline-ops, migration-path,
+work-planning, grooming, e2e, technical-writing).
 
 ## Writing your own skills
 

@@ -30,7 +30,8 @@ Or wire it into a project declaratively in `.claude/settings.json`:
 }
 ```
 
-This makes all skills, the three agent personas, and the session hooks available in that project.
+This makes all **50 skills**, **38 agents** (30 SDLC + 8 marketing), and session hooks available in
+that project. See [docs/plugin-discovery.md](docs/plugin-discovery.md) for load paths.
 
 ## Use with any other agent
 
@@ -47,15 +48,17 @@ See [`docs/getting-started.md`](docs/getting-started.md) for per-tool setup.
 | Phase   | Skills |
 |---------|--------|
 | Define  | `spec-first`, `product-brief`, `idea-shaping` |
-| Plan    | `work-planning` |
-| Build   | `incremental-delivery`, `test-first`, `context-curation`, `source-first`, `ui-craft`, `accessibility`, `react-patterns`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `caching-strategy`, `llm-feature-engineering` |
-| Verify  | `browser-checks`, `fault-recovery` |
+| Plan    | `work-planning`, `product-grooming` |
+| Build   | `incremental-delivery`, `test-first`, `ui-craft`, `ux-design`, `accessibility`, `react-patterns`, `mobile-patterns`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `caching-strategy`, `llm-feature-engineering`, `i18n-l10n` |
+| Verify  | `browser-checks`, `e2e-testing`, `fault-recovery` |
 | Review  | `review-gate`, `simplify`, `hardening`, `perf-budget`, `dependency-hygiene` |
-| Ship    | `git-flow`, `pipeline-ops`, `migration-path`, `decision-docs`, `launch-readiness` |
-| Operate | `observability`, `incident-response` |
-| Meta    | `skill-router` (routes a task to the right skill), `skill-creator` (author new skills) |
+| Ship    | `git-flow`, `pipeline-ops`, `migration-path`, `decision-docs`, `technical-writing`, `launch-readiness` |
+| Operate | `observability`, `incident-response`, `finops-budget` |
+| Grow    | `skills/marketing/*` — see [marketing/README.md](marketing/README.md) |
+| Meta    | `agent-guardrails` (always on), `skill-router`, `skill-creator` |
 
-See [SKILLS.md](SKILLS.md) for the full auto-generated catalog with descriptions.
+See [SKILLS.md](SKILLS.md) for the full auto-generated catalog. **End-to-end example:**
+[docs/sdlc-walkthrough.md](docs/sdlc-walkthrough.md).
 
 ## Agent personas
 
@@ -65,20 +68,35 @@ Three general reviewer personas:
 - `security-auditor` — vulnerability detection, threat modeling, secure-coding review
 - `test-engineer` — test strategy, test writing, coverage analysis
 
-Plus a full **25-role SDLC org** spanning 8 layers (product, architecture, eng management, development,
-quality, DevOps/platform, governance, release) — each persona drives the relevant skills. See
-[docs/agent-org.md](docs/agent-org.md) for the org map and how work flows between roles.
+Plus a full **25-role SDLC org** spanning 8 layers and a **5-role growth team** (Layer 9) for
+marketing — positioning, content, social, SEO, and community. See [docs/agent-org.md](docs/agent-org.md)
+for the org map and how work flows between roles.
 
 ## Repository layout
 
 ```
-skills/         → One SKILL.md per skill directory
-agents/         → Reusable agent personas
-hooks/          → Session lifecycle hooks (skill router auto-loaded on session start)
-references/     → Supplementary checklists (testing, performance, security, accessibility)
-docs/           → Per-tool setup guides
-.claude-plugin/ → Plugin + marketplace manifests
+skills/           → Engineering skills (marketing under skills/marketing/)
+agents/sdlc/      → SDLC personas (30 agents)
+agents/marketing/ → Growth team (8 agents)
+marketing/        → Marketing team guide, router, references
+hooks/            → Session lifecycle hooks (skill router auto-loaded on session start)
+references/       → Engineering checklists (testing, performance, security, accessibility, + phase checklists)
+docs/             → Per-tool setup guides
+.claude-plugin/   → Plugin + marketplace manifests
 ```
+
+## Marketing team
+
+A separate **Growth & Marketing** team for post-launch growth — grouped under `marketing/`:
+
+- [marketing/README.md](marketing/README.md) — team guide and flow
+- [agents/marketing/](agents/marketing/) — 5 agents (growth-lead, content-marketer, etc.)
+- [skills/marketing/](skills/marketing/) — 5 skills (growth-strategy, content-marketing, etc.)
+- [prompts/agents/marketing/](prompts/agents/marketing/) — copy-paste prompts
+
+## SDLC team
+
+- [agents/sdlc/README.md](agents/sdlc/README.md) — 30 agents including `ux-designer`, `technical-writer`
 
 ## Authoring new skills
 

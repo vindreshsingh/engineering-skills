@@ -26,7 +26,10 @@ nothing here is worth doing on a path that isn't actually hot.
 
 ## Frontend (see [[react-patterns]])
 
+Run the [react patterns checklist](./react-patterns-checklist.md) for the full pass. At minimum:
+
 - [ ] No request waterfalls; cheap checks precede awaits.
+- [ ] Server/Client boundary at the leaves; no server secrets in client bundles.
 - [ ] Bundle impact checked; heavy/rare code lazy-loaded; barrel imports avoided.
 - [ ] Unnecessary re-renders minimized; expensive renders deferred to keep input responsive.
 - [ ] No layout shift; feedback within a frame or two of interaction.

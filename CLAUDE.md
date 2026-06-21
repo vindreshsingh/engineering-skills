@@ -6,11 +6,13 @@ guides work **on this repository itself** (authoring and maintaining skills).
 ## Structure
 
 ```
-skills/         → One SKILL.md per skill (the processes)
-agents/         → Reviewer personas (code-reviewer, security-auditor, test-engineer)
+skills/         → One SKILL.md per skill (marketing under skills/marketing/)
+agents/sdlc/      → SDLC personas (marketing under agents/marketing/)
+marketing/      → Marketing team guide, router (SKILL.md), references
+prompts/        → Copy-paste agent prompts + skill-loading instructions
 commands/       → Slash commands (/spec, /plan, /build, /test, /review, /ship)
-hooks/          → Session lifecycle hooks (skill-router injected on session start)
-references/     → Supplementary checklists (testing, performance, security, accessibility)
+hooks/          → Session lifecycle hooks (guardrails + skill-router injected on session start)
+references/     → Engineering checklists (testing, performance, security, accessibility)
 docs/           → Getting-started and skill-authoring guides
 .claude-plugin/ → Plugin + marketplace manifests
 ```
@@ -18,15 +20,17 @@ docs/           → Getting-started and skill-authoring guides
 ## Skills by phase
 
 - **Define:** idea-shaping, product-brief, spec-first
-- **Plan:** work-planning
-- **Build:** incremental-delivery, test-first, context-curation, source-first, ui-craft, accessibility,
-  react-patterns, interface-design, design-handoff, resilience, data-modeling, caching-strategy,
-  llm-feature-engineering
-- **Verify:** browser-checks, fault-recovery
-- **Review:** review-gate, simplify, hardening, perf-budget, dependency-hygiene
-- **Ship:** git-flow, pipeline-ops, migration-path, decision-docs, launch-readiness
-- **Operate:** observability, incident-response
-- **Meta:** skill-router, skill-creator
+- **Plan:** work-planning, product-grooming
+- **Build:** incremental-delivery, test-first, ux-design, mobile-patterns, i18n-l10n, context-curation,
+  source-first, ui-craft, micro-interactions, accessibility, react-patterns, interface-design, design-handoff, resilience,
+  data-modeling, caching-strategy, llm-feature-engineering
+- **Verify:** browser-checks, e2e-testing, fault-recovery
+- **Review:** review-gate, simplify, hardening, perf-budget, dependency-hygiene, version-upgrade
+- **Ship:** git-flow, pipeline-ops, migration-path, decision-docs, technical-writing, launch-readiness
+- **Operate:** observability, incident-response, finops-budget
+- **Grow:** `skills/marketing/` — growth-strategy, content-marketing, social-distribution, seo-growth,
+  community-engagement (team guide: `marketing/`)
+- **Meta:** agent-guardrails (always on), skill-router, skill-creator
 
 ## Conventions
 

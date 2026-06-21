@@ -11,6 +11,9 @@ rather than improvising a weaker version of a process that already exists.
 
 Core rules:
 
+- **Guardrails always on** — load `skills/agent-guardrails/SKILL.md` at session start. Never run
+  destructive data operations, read secrets from `.env`/config, or break security controls without
+  explicit user approval. See `references/agent-guardrails-checklist.md`.
 - If a task matches a skill, use it.
 - Follow the skill's steps and verification completely — partial application loses most of the value.
 - Load the skill relevant to the current step; don't pull in all of them at once.
@@ -27,14 +30,14 @@ Map what the user is asking for to a skill:
 - Code review → `review-gate`
 - Refactor / cleanup → `simplify`
 - API / module / schema boundary → `interface-design`
-- UI work → `ui-craft`; accessibility → `accessibility`; design to code → `design-handoff`; React/Next perf → `react-patterns`
+- UI work → `ui-craft`; motion / click feedback / view transitions → `micro-interactions`; accessibility → `accessibility`; design to code → `design-handoff`; React/Next perf → `react-patterns`
 - Verify a web change → `browser-checks`
 - Security / untrusted input / auth → `hardening`
 - Something slow → `perf-budget`; caching → `caching-strategy`
 - Failure handling (timeouts, retries, idempotency) → `resilience`
 - Database schema / queries → `data-modeling`
 - Building an AI/LLM feature → `llm-feature-engineering`
-- Adding / upgrading dependencies → `dependency-hygiene`
+- Adding / upgrading dependencies → `dependency-hygiene`; upgrading a specific package (research breaking changes) → `version-upgrade`
 - Writing or improving a skill in this repo → `skill-creator`
 - Logging, metrics, tracing, alerts → `observability`
 - A production outage / postmortem → `incident-response`
@@ -43,16 +46,29 @@ Map what the user is asking for to a skill:
 - Decisions / docs → `decision-docs`
 - Shipping to production → `launch-readiness`
 - Not sure which applies → `skill-router` (the routing meta-skill)
+- Backlog grooming / refinement before sprint → `product-grooming`
+- E2E / browser user journey tests → `e2e-testing`
+- Internationalization / locales / RTL → `i18n-l10n`
+- Mobile app (RN, Flutter, native) → `mobile-patterns`
+- UX flows before UI build → `ux-design`
+- README, API docs, runbooks → `technical-writing`
+- Product launch / go-to-market → `marketing/SKILL.md` (router) → `skills/marketing/growth-strategy`
+- SEO / page ranking / organic traffic → `skills/marketing/seo-growth`
+- Community engagement / user retention → `skills/marketing/community-engagement`
+- Marketing plan / social content / blogs → see `marketing/README.md` and `agents/marketing/`
 
 ## Lifecycle
 
 Most non-trivial work moves through phases — don't jump straight to code:
 
-**Define → Plan → Build → Verify → Review → Ship → Operate**
+**Define → Plan → Build → Verify → Review → Ship → Operate → Grow**
 
 ## Agents and references
 
-- `agents/` — reviewer personas (code-reviewer, security-auditor, test-engineer) for focused passes.
+- `agents/` — **SDLC** personas in `agents/sdlc/`; **marketing** in `agents/marketing/`. See
+  [docs/agent-org.md](docs/agent-org.md), [agents/sdlc/README.md](agents/sdlc/README.md), and
+  [marketing/README.md](marketing/README.md).
+- `prompts/` — shared instructions for how personas load and follow skills.
 - `references/` — checklists (testing, performance, security, accessibility) to use with the matching
   skill.
 

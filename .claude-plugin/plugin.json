@@ -1,15 +1,15 @@
 {
   "name": "engineering-skills",
-  "version": "1.2.0",
-  "description": "Production-grade engineering skills for AI coding agents — covering the full software development lifecycle from spec to ship.",
+  "version": "1.4.1",
+  "description": "Production-grade engineering skills for AI coding agents — SDLC from spec to ship, plus marketing team for growth.",
   "author": {
     "name": "Vindresh Kumar"
   },
   "homepage": "https://github.com/vindreshsingh/engineering-skills",
   "repository": "https://github.com/vindreshsingh/engineering-skills",
   "license": "MIT",
-  "skills": "./skills",
+  "skills": ["./skills", "./skills/marketing"],
   "commands": "./commands",
   "hooks": "./hooks/hooks.json",
-  "agents": "./agents"
+  "agents": ["./agents/sdlc", "./agents/marketing"]
 }
