@@ -6,6 +6,9 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **End-to-end demo + submission kit.** `docs/launch/demo-walkthrough.md` shows the 40-role org
+  shipping "Add Product Reviews" phase by phase (with a Mermaid flow diagram), linked from the README;
+  `docs/launch/submissions.md` has copy-paste marketplace + awesome-list submission text.
 - **Behavioral test coverage reached 100%** — every one of the 52 process skills now has a
   pressure-scenario test (meta routers excluded). Added the remaining 24 tests across engineering and
   marketing skills; `scripts/skill-test.sh` excludes meta skills from the coverage denominator.
