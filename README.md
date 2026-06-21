@@ -3,7 +3,7 @@
 [![validate](https://github.com/vindreshsingh/engineering-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/vindreshsingh/engineering-skills/actions/workflows/validate.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![skills: 53](https://img.shields.io/badge/skills-53-brightgreen)
-![behaviorally tested: 52%](https://img.shields.io/badge/behaviorally%20tested-52%25-success)
+![behaviorally tested: 100%](https://img.shields.io/badge/behaviorally%20tested-100%25-success)
 
 **Turn your AI coding agent into a disciplined engineering team.** A reusable, agent-agnostic library
 of **53 production-grade engineering skills** — each a step-by-step process with verification, not
@@ -20,8 +20,8 @@ two axes:
 
 - **Breadth** — the full lifecycle *plus* a 40-persona org (PM, architect, DBA, QA, SRE, release… and a
   marketing team), orchestrated by `orchestrated-delivery`.
-- **Rigor** — skills are **behaviorally tested**: over half have a pressure-scenario test that proves
-  the skill changes what the agent does, enforced in CI.
+- **Rigor** — skills are **behaviorally tested**: **every** process skill has a pressure-scenario test
+  that proves the skill changes what the agent does, enforced in CI.
 
 It's new — competing on scope and rigor, not adoption. Honest feedback and PRs welcome.
 
