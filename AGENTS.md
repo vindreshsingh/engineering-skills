@@ -74,5 +74,14 @@ Most non-trivial work moves through phases — don't jump straight to code:
 
 ## For other tools
 
-The skills are plain Markdown and tool-agnostic. Point your agent at the relevant `SKILL.md` via its
-system prompt, rules file, or conversation. See [docs/getting-started.md](docs/getting-started.md).
+The skills are plain Markdown and tool-agnostic. This repo ships the entry-point file each major agent
+reads, all pointing here:
+
+- **Claude Code** — `.claude-plugin/` + `CLAUDE.md`
+- **Gemini CLI** — `GEMINI.md`
+- **Cursor** — `.cursor/rules/engineering-skills.mdc`
+- **GitHub Copilot** — `.github/copilot-instructions.md`
+- **Codex / OpenCode / Factory / others** — this `AGENTS.md` (read natively)
+
+Per-tool install and usage: [docs/platforms.md](docs/platforms.md). General guide:
+[docs/getting-started.md](docs/getting-started.md).

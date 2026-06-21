@@ -35,13 +35,18 @@ that project. See [docs/plugin-discovery.md](docs/plugin-discovery.md) for load 
 
 ## Use with any other agent
 
+**Works with** Claude Code, Gemini CLI, Cursor, GitHub Copilot, and any AGENTS.md-aware tool (Codex,
+OpenCode, Factory…) — the repo ships the entry-point file each one reads, all pointing at the same
+skills.
+
 Skills are plain Markdown. Clone the repo and point your agent at `skills/<name>/SKILL.md`:
 
 ```bash
 git clone https://github.com/vindreshsingh/engineering-skills.git
 ```
 
-See [`docs/getting-started.md`](docs/getting-started.md) for per-tool setup.
+Per-tool install and usage: [`docs/platforms.md`](docs/platforms.md). General guide:
+[`docs/getting-started.md`](docs/getting-started.md).
 
 ## Skills by phase
 
