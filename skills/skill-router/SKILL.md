@@ -9,6 +9,17 @@ This repo's skills are **step-by-step processes**, not reference docs. The hard 
 right one at the right moment — then following it fully. This skill is the map: identify what you're
 doing, pick the matching skill(s), work in lifecycle order, and chain to the next phase when done.
 
+## The Rule (mandatory)
+
+**If there is even a ~1% chance a skill applies, invoke it before acting** — before clarifying
+questions, before writing code, before "just doing it." Check the routing table below first. If a
+loaded skill turns out not to fit, set it aside; but you do not get to skip the check, and **partial
+application counts as skipping**. Confidence without the process is exactly the failure these skills
+exist to prevent.
+
+**Precedence:** the user always wins. If the user — or `CLAUDE.md`/`AGENTS.md` — says not to use a
+skill, follow the user. Skills override your *default* behavior, never an explicit instruction.
+
 **Before routing:** confirm [[agent-guardrails]] is active — destructive data ops, secret access, and
 security bypasses require explicit user approval regardless of which skill you pick next.
 

@@ -36,7 +36,14 @@ if os.path.isfile(marketing):
     parts.append(open(marketing).read())
 
 intro = (
-    "engineering-skills loaded. "
+    "engineering-skills loaded.\n\n"
+    "THE RULE: If there is even a ~1% chance a skill applies to what you are about to do, "
+    "you MUST consult skill-router and invoke the matching skill BEFORE acting — including before "
+    "asking clarifying questions or writing any code. If a loaded skill turns out not to fit, you may "
+    "set it aside, but you do not get to skip the check. Partial application counts as skipping.\n\n"
+    "PRECEDENCE: The user's explicit instructions always win. If the user (or CLAUDE.md/AGENTS.md) "
+    "says not to use a skill, follow the user. Skills override only your default behavior, never the "
+    "user.\n\n"
     "Follow agent-guardrails before any destructive, secret, or security-breaking action. "
     "Use skill-router for SDLC tasks; marketing/SKILL.md for growth."
 )
