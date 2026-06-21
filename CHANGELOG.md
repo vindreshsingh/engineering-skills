@@ -11,6 +11,15 @@ All notable changes to this project are documented here. This project adheres to
   just that it's well-formed. Adds `scripts/skill-test.sh` (structure + coverage), `docs/testing-skills.md`
   (the method), a test template, and exemplar tests for `test-first`, `hardening`, and `simplify`. CI now
   runs the skill-test harness alongside structural validation.
+- **Expanded behavioral test coverage** to 12 skills — added pressure-scenario tests for `spec-first`,
+  `review-gate`, `resilience`, `data-modeling`, `fault-recovery`, `migration-path`, `incident-response`,
+  `llm-feature-engineering`, and `perf-budget`.
+
+### Changed
+- **Enforced skill invocation.** The session-start hook and `skill-router` now state a mandatory rule:
+  if there's even a ~1% chance a skill applies, invoke it before acting (including before clarifying
+  questions or code); partial application counts as skipping. The user's explicit instructions always
+  take precedence.
 
 ## [1.4.1] - 2026-06-19
 
