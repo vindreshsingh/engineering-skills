@@ -6,6 +6,12 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Orchestrated delivery (the build loop).** New flagship skill `orchestrated-delivery` — a conductor
+  that drives a feature end-to-end (define → plan → build → verify → review → ship), loading the
+  governing skill and persona at each phase, gating on exit criteria + sign-off, and dispatching
+  independent work to parallel subagents. Supporting skill `parallel-subagents` for the dispatch
+  technique, a `/deliver` command, and behavioral tests for both. Turns the persona org into a
+  coordinated system rather than a roster.
 - **Behavioral skill testing.** Each skill can now have a pressure-scenario test at
   `tests/<skill>.test.md` that proves the skill changes agent behavior (RED → GREEN → REFACTOR), not
   just that it's well-formed. Adds `scripts/skill-test.sh` (structure + coverage), `docs/testing-skills.md`
