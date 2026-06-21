@@ -6,6 +6,10 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Behavioral test coverage crossed 50%** (28/53). Added pressure-scenario tests for work-planning,
+  incremental-delivery, source-first, context-curation, interface-design, caching-strategy,
+  dependency-hygiene, git-flow, pipeline-ops, launch-readiness, observability, decision-docs,
+  accessibility, and browser-checks.
 - **Multi-platform entry points.** Ships the instruction file each major agent reads — `GEMINI.md`
   (Gemini CLI), `.cursor/rules/engineering-skills.mdc` (Cursor), `.github/copilot-instructions.md`
   (Copilot) — plus `AGENTS.md` for Codex/OpenCode/Factory and the existing Claude Code plugin. All
