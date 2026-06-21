@@ -6,6 +6,10 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Multi-platform entry points.** Ships the instruction file each major agent reads — `GEMINI.md`
+  (Gemini CLI), `.cursor/rules/engineering-skills.mdc` (Cursor), `.github/copilot-instructions.md`
+  (Copilot) — plus `AGENTS.md` for Codex/OpenCode/Factory and the existing Claude Code plugin. All
+  delegate to `skill-router` as the single source of truth. Per-tool guide in `docs/platforms.md`.
 - **Orchestrated delivery (the build loop).** New flagship skill `orchestrated-delivery` — a conductor
   that drives a feature end-to-end (define → plan → build → verify → review → ship), loading the
   governing skill and persona at each phase, gating on exit criteria + sign-off, and dispatching
