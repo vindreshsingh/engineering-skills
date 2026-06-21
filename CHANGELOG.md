@@ -3,6 +3,15 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Behavioral skill testing.** Each skill can now have a pressure-scenario test at
+  `tests/<skill>.test.md` that proves the skill changes agent behavior (RED → GREEN → REFACTOR), not
+  just that it's well-formed. Adds `scripts/skill-test.sh` (structure + coverage), `docs/testing-skills.md`
+  (the method), a test template, and exemplar tests for `test-first`, `hardening`, and `simplify`. CI now
+  runs the skill-test harness alongside structural validation.
+
 ## [1.4.1] - 2026-06-19
 
 ### Added

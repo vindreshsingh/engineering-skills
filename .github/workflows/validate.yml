@@ -16,6 +16,8 @@ jobs:
           python-version: "3.x"
       - name: Validate skills, agents, and manifests
         run: bash scripts/validate.sh
+      - name: Validate behavioral skill tests
+        run: bash scripts/skill-test.sh
       - name: Check the skills catalog is up to date
         run: |
           bash scripts/generate-catalog.sh
