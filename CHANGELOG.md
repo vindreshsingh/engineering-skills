@@ -6,6 +6,9 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Launch kit + discovery.** Repo description and topics set for GitHub discovery; README hero with
+  badges and an honest comparison; a `docs/launch/` go-to-market kit (positioning, announcement post,
+  Show HN / X / LinkedIn copy, SEO plan) drafted with the repo's own marketing skills.
 - **Behavioral test coverage crossed 50%** (28/53). Added pressure-scenario tests for work-planning,
   incremental-delivery, source-first, context-curation, interface-design, caching-strategy,
   dependency-hygiene, git-flow, pipeline-ops, launch-readiness, observability, decision-docs,
