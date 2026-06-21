@@ -1,0 +1,361 @@
+commands/observe.md
+  afd28a8ceab605a9 1-8
+skills/version-upgrade/SKILL.md
+  afd28a8ceab605a9 1-237
+skills/browser-checks/SKILL.md
+  91e5c30ee17aa6ff 3,8-11,13-16,20-21,23-24,26-27,31-136,138-141,147-153,157-164,168-175
+CLAUDE.md
+  9edae2c93c8241f6 14,33
+  afd28a8ceab605a9 9-11,15,23-25,27-32
+  c2054424e6848147 12
+skills/resilience/SKILL.md
+  35d5de25dcdce16b 3,9-10,13-18,22-28,30-31,33-34,38-140,142,144-252,260-265,272,274-279,283-299,301-302
+prompts/agents/marketing/README.md
+  afd28a8ceab605a9 1-14
+prompts/agents/marketing/email-marketer.md
+  afd28a8ceab605a9 1-8,10-21
+  9edae2c93c8241f6 9
+skills/react-patterns/SKILL.md
+  afd28a8ceab605a9 18-19
+  35d5de25dcdce16b 3,8-10,16-17,20-21,25-33,39-59,61-73,79,83-87,99-125,130-133,135-136,138-148,152-154,156-159,161-163,165-175,179-185,187-189,191,193-195,197-201,203-208,218-225,227-250,252-253,255-260,262-299,303,305-313,318,325-332,337-338,340-341,343,345-348,352-356,358-360,362-363,368-369,371,373-374
+agents/marketing/growth-lead.md
+  afd28a8ceab605a9 1-62
+skills/agent-guardrails/SKILL.md
+  9edae2c93c8241f6 1-168
+skills/source-first/SKILL.md
+  35d5de25dcdce16b 3,8-10,12-18,24,26-32,36-182,184-191,195,199-202,209-214,218-225
+skills/dependency-hygiene/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-16,20,24-33,37-132,136,139-216,220-235,243-247,251-262,266-275
+  afd28a8ceab605a9 17-19,133-135,137-138,217-219
+skills/pipeline-ops/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-17,21-28,30,34-232,234-235,239-246,250-262,266-276
+prompts/agents/marketing/paid-media-manager.md
+  afd28a8ceab605a9 1-8,10-21
+  9edae2c93c8241f6 9
+prompts/agents/sdlc/technical-writer.md
+  9edae2c93c8241f6 9
+  afd28a8ceab605a9 1-8,10-21
+skills/data-modeling/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,14-17,21-26,28-29,33-241,243-244,251-256,261-273,277-288
+prompts/agents/marketing/community-manager.md
+  9edae2c93c8241f6 26,57
+  afd28a8ceab605a9 1-25,27-56,58-87
+references/incident-response-checklist.md
+  afd28a8ceab605a9 1-28
+agents/README.md
+  afd28a8ceab605a9 1-18
+docs/getting-started.md
+  afd28a8ceab605a9 60-68,71-72,74-77,80,84,105-108,112,114
+  9edae2c93c8241f6 29,31
+  c2054424e6848147 78-79,81-83
+prompts/prompt-structure.md
+  c2054424e6848147 1-29,31-33,35-40,42-56
+  9edae2c93c8241f6 30,34,41
+skills/design-handoff/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-18,22-27,29-31,35-274,276-278,282-290,295-306,310-321
+skills/incremental-delivery/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-18,22-27,29-30,34-204,206,208-209,213-220,225-226,228-234,238-246
+skills/accessibility/SKILL.md
+  91e5c30ee17aa6ff 3,8-11,13-15,19-20,22-26,30-192,194,198-208,212-223,227-235
+marketing/references/seo-checklist.md
+  afd28a8ceab605a9 1-42
+skills/migration-path/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-19,23-26,29-30,32-34,38-232,234-235,239-246,250-261,265-274
+  afd28a8ceab605a9 27-28
+skills/e2e-testing/SKILL.md
+  afd28a8ceab605a9 1-119
+marketing/references/email-nurture-checklist.md
+  afd28a8ceab605a9 1-28
+marketing/references/paid-ads-checklist.md
+  afd28a8ceab605a9 1-29
+skills/decision-docs/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-20,24-31,33-34,38-245,247-248,254,256-260,265-267,269-274,278-290
+skills/micro-interactions/SKILL.md
+  afd28a8ceab605a9 1-211
+skills/skill-router/SKILL.md
+  35d5de25dcdce16b 3,8-10,15-17,19,21-41,43-48,50-59,64,66-80,84-89,91-96,98-108,110-118,124-129,131-132,146-150,153-160,162-164,171-238,248-252,254,256,258,264-280,282-284,286,288-296,298,300-307,309,311-317
+  9edae2c93c8241f6 12-13
+  afd28a8ceab605a9 42,49,82,97,109,119-123,133-145,161,165-170,239-247,253,255,257,259-263
+prompts/agents/README.md
+  c2054424e6848147 1-11,17-21,25-29,34-38,43-47,52-56,60-64,68-72,75-79,82,100-108
+  afd28a8ceab605a9 12-16,22-24,30-33,39-42,48-51,57-59,65-67,73-74,80-81,83-99,109-115
+references/technical-writing-checklist.md
+  afd28a8ceab605a9 1-31
+docs/sdlc-walkthrough.md
+  afd28a8ceab605a9 1-225
+skills/launch-readiness/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-19,23-31,33,37-248,250,254-262,266-277,281-290
+prompts/how-to-use-prompts.md
+  c2054424e6848147 1-9,11-25,27-49
+  afd28a8ceab605a9 10,26
+prompts/agents/marketing/content-marketer.md
+  afd28a8ceab605a9 1-27,29-56,58-84
+  9edae2c93c8241f6 28,57
+commands/e2e.md
+  afd28a8ceab605a9 1-9
+agents/sdlc/README.md
+  9edae2c93c8241f6 5-6
+  afd28a8ceab605a9 1-4,7-20
+agents/marketing/social-media-manager.md
+  afd28a8ceab605a9 1-48
+references/browser-checks-checklist.md
+  91e5c30ee17aa6ff 1-58
+references/react-patterns-checklist.md
+  35d5de25dcdce16b 1-67
+prompts/agents/sdlc/README.md
+  afd28a8ceab605a9 1-7
+skills/marketing/paid-ads/SKILL.md
+  afd28a8ceab605a9 1-113
+agents/sdlc/frontend-developer.md
+  afd28a8ceab605a9 1-41
+references/e2e-testing-checklist.md
+  afd28a8ceab605a9 1-30
+references/caching-patterns.md
+  91e5c30ee17aa6ff 1-201
+prompts/agents/marketing/growth-lead.md
+  afd28a8ceab605a9 1-28,30-60,62-97
+  9edae2c93c8241f6 29,61
+skills/incident-response/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,13-15,19-24,26-27,29-30,34-164,166,168-285,289-297,301-312,316-326,328-332
+agents/marketing/content-marketer.md
+  afd28a8ceab605a9 1-47
+scripts/generate-catalog.sh
+  afd28a8ceab605a9 17-31,37-38,43-58,61-64
+references/performance-checklist.md
+  35d5de25dcdce16b 29-30,32
+skills/git-flow/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,13-18,22-28,30-31,35-273,275,280,283-286,290-299,303-311
+skills/product-brief/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-17,21-26,28,30-39,43-232,234,236,240-247,251-262,266-275
+skills/ux-design/SKILL.md
+  afd28a8ceab605a9 1-103
+skills/fault-recovery/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,13-16,22-29,31,35-271,273-275,279-286,291-299,303-312
+skills/marketing/referral-loop/SKILL.md
+  afd28a8ceab605a9 1-114
+agents/sdlc/technical-writer.md
+  afd28a8ceab605a9 1-43
+prompts/agents/marketing/seo-strategist.md
+  9edae2c93c8241f6 26,55
+  afd28a8ceab605a9 1-25,27-54,56-82
+skills/observability/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-17,21-26,28-29,33-260,262,266-273,277-289,293-302
+skills/spec-first/SKILL.md
+  35d5de25dcdce16b 3,9-10,12-18,22,24-31,33-34,36-41,45-254,256-258,262-268,272-273,276-280,284-293
+prompts/agent-base.md
+  9edae2c93c8241f6 8-20,23
+  c2054424e6848147 1-7,21-22,24-59
+docs/agent-org.md
+  c2054424e6848147 9,36,118,138-139,170,173-176
+  afd28a8ceab605a9 8,20-21,41-44,74-108,120,128-130,148-161,166,171-172
+commands/grow.md
+  afd28a8ceab605a9 1-10
+skills/hardening/SKILL.md
+  5a6b1fe0153ffdae 3,9-11,13-19,23-29,31-32,36-247,249,253-261,265-279,283-293
+scripts/validate.sh
+  afd28a8ceab605a9 13,33-35,37-38,40,44,47,57,59,63-75
+  9edae2c93c8241f6 31
+marketing/references/channel-checklist.md
+  afd28a8ceab605a9 1-36
+references/accessibility-checklist.md
+  91e5c30ee17aa6ff 3,5,7-11,13-18,22-37,39-42,44,46-51,53,55-59,61,63-67,71-75
+.claude-plugin/plugin.json
+  afd28a8ceab605a9 3-4,11,14
+hooks/session-start.sh
+  afd28a8ceab605a9 6,8-9,13,15,20-23,35,42,44-45
+  9edae2c93c8241f6 3,7,11-12,16-18,24-34,36-41,43
+prompts/agents/marketing/referral-manager.md
+  9edae2c93c8241f6 9
+  afd28a8ceab605a9 1-8,10-21
+references/micro-interactions-checklist.md
+  afd28a8ceab605a9 1-35
+marketing/README.md
+  afd28a8ceab605a9 1-66
+references/git-flow-checklist.md
+  afd28a8ceab605a9 1-27
+agents/marketing/referral-manager.md
+  afd28a8ceab605a9 1-35
+skills/mobile-patterns/SKILL.md
+  afd28a8ceab605a9 1-97
+commands/incident.md
+  afd28a8ceab605a9 1-9
+AGENTS.md
+  c2054424e6848147 49,71
+  9edae2c93c8241f6 14-16
+  afd28a8ceab605a9 33,40,50-58,64,68-70
+skills/marketing/email-nurture/SKILL.md
+  afd28a8ceab605a9 1-105
+references/work-planning-checklist.md
+  afd28a8ceab605a9 1-27
+skills/context-curation/SKILL.md
+  5a6b1fe0153ffdae 3,9-10,12-18,23-28,30-31,35-229,231,237,239-242,246-255,259-268
+skills/work-planning/SKILL.md
+  35d5de25dcdce16b 3,8-10,12-20,24-29,31-42,46-233,235,239-246,250-259,263-272
+agents/marketing/community-manager.md
+  afd28a8ceab605a9 1-51
+skills/perf-budget/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,13-19,23-27,29-30,32,36-217,219,223-230,234-244,248-256
+CHANGELOG.md
+  afd28a8ceab605a9 6-52
+references/grooming-checklist.md
+  afd28a8ceab605a9 1-35
+prompts/agents/sdlc/ux-designer.md
+  9edae2c93c8241f6 9
+  afd28a8ceab605a9 1-8,10-21
+prompts/README.md
+  c2054424e6848147 1-9,12-14,18-20
+  afd28a8ceab605a9 10-11,15-17
+skills/caching-strategy/SKILL.md
+  91e5c30ee17aa6ff 3,8-10,12-14,20-21,24-25,29-50,54-59,63-69,73-78
+skills/product-grooming/SKILL.md
+  afd28a8ceab605a9 1-109
+skills/llm-feature-engineering/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,13-19,23-27,29-34,38-277,279,283-292,297-307,311-322
+skills/review-gate/SKILL.md
+  35d5de25dcdce16b 3,9-10,12-19,23,26-27,29-32,36-197,199,201-206,210-211,214-218,224-232,236-246
+agents/marketing/README.md
+  9edae2c93c8241f6 3-4
+  afd28a8ceab605a9 1-2,5-16
+agents/sdlc/dependency-analyzer.md
+  afd28a8ceab605a9 1-39
+references/version-upgrade-checklist.md
+  afd28a8ceab605a9 1-54
+marketing/references/community-checklist.md
+  afd28a8ceab605a9 1-40
+skills/interface-design/SKILL.md
+  5a6b1fe0153ffdae 3,8-11,13-19,23-29,31-32,36-278,280,284-291,295-306,310-320
+skills/technical-writing/SKILL.md
+  afd28a8ceab605a9 1-109
+marketing/references/content-checklist.md
+  afd28a8ceab605a9 1-35
+agents/sdlc/ux-designer.md
+  afd28a8ceab605a9 1-44
+commands/a11y.md
+  afd28a8ceab605a9 1-9
+references/pipeline-ops-checklist.md
+  afd28a8ceab605a9 1-28
+prompts/agents/marketing/social-media-manager.md
+  afd28a8ceab605a9 1-26,28-56,58-84
+  9edae2c93c8241f6 27,57
+agents/marketing/paid-media-manager.md
+  afd28a8ceab605a9 1-34
+agents/marketing/email-marketer.md
+  afd28a8ceab605a9 1-34
+skills/test-first/SKILL.md
+  35d5de25dcdce16b 3,9-10,12-19,24-27,30-47,51-116,118-119,121-122,124,126-195,199,201,203-206,211,213-219,223-239,241
+skills/ui-craft/SKILL.md
+  35d5de25dcdce16b 3,8-10,12-16,19,25-38,42,44-198,202-209,217,221-224,228-238
+  afd28a8ceab605a9 17-18
+marketing/references/referral-loop-checklist.md
+  afd28a8ceab605a9 1-28
+references/agent-guardrails-checklist.md
+  9edae2c93c8241f6 1-37
+marketing/SKILL.md
+  afd28a8ceab605a9 1-94
+skills/idea-shaping/SKILL.md
+  5a6b1fe0153ffdae 3,8-10,12-16,20-21,23-25,27-28,30,34-249,251,255-262,266-275,279-287
+skills/finops-budget/SKILL.md
+  afd28a8ceab605a9 1-101
+references/migration-path-checklist.md
+  afd28a8ceab605a9 1-29
+skills/simplify/SKILL.md
+  35d5de25dcdce16b 3,8-10,12-18,22,26-27,29-32,34-35,39-210,212,216-223,228-230,233-237,241-250
+README.md
+  afd28a8ceab605a9 33-34,51-53,55-57,60-61,73,78-80,82-84,88-90,93-100
+  9edae2c93c8241f6 58
+agents/marketing/seo-strategist.md
+  afd28a8ceab605a9 1-49
+docs/plugin-discovery.md
+  afd28a8ceab605a9 1-28
+skills/i18n-l10n/SKILL.md
+  afd28a8ceab605a9 1-102
+references/launch-readiness-checklist.md
+  afd28a8ceab605a9 1-33
+agents/sdlc/platform-engineer.md
+  afd28a8ceab605a9 1-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.5",
+  "base_commit_sha": "a203208783b1b2ed153a722ba416de189b8c9752",
+  "prompts": {
+    "35d5de25dcdce16b": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "a78f5255-6b14-4e72-a874-7839170a2ace",
+        "model": "composer-2.5"
+      },
+      "human_author": "vindreshsingh <52521987+vindreshsingh@users.noreply.github.com>",
+      "messages": [],
+      "total_additions": 2460,
+      "total_deletions": 374,
+      "accepted_lines": 2448,
+      "overriden_lines": 0
+    },
+    "5a6b1fe0153ffdae": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "43f77a69-64df-45d9-ba1d-67ddd0175a5f",
+        "model": "composer-2.5"
+      },
+      "human_author": "vindreshsingh <52521987+vindreshsingh@users.noreply.github.com>",
+      "messages": [],
+      "total_additions": 5161,
+      "total_deletions": 658,
+      "accepted_lines": 5159,
+      "overriden_lines": 0
+    },
+    "91e5c30ee17aa6ff": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "10cad17f-34f5-4532-bb87-b023bf76c232",
+        "model": "composer-2.5"
+      },
+      "human_author": "vindreshsingh <52521987+vindreshsingh@users.noreply.github.com>",
+      "messages": [],
+      "total_additions": 734,
+      "total_deletions": 140,
+      "accepted_lines": 734,
+      "overriden_lines": 0
+    },
+    "9edae2c93c8241f6": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "eb595ee6-71f4-4370-aad7-96a27b85e25d",
+        "model": "composer-2.5"
+      },
+      "human_author": "vindreshsingh <52521987+vindreshsingh@users.noreply.github.com>",
+      "messages": [],
+      "total_additions": 312,
+      "total_deletions": 43,
+      "accepted_lines": 282,
+      "overriden_lines": 0
+    },
+    "afd28a8ceab605a9": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "67336e9b-8065-47fa-a1e6-4284f5046af3",
+        "model": "composer-2.5"
+      },
+      "human_author": "vindreshsingh <52521987+vindreshsingh@users.noreply.github.com>",
+      "messages": [],
+      "total_additions": 6111,
+      "total_deletions": 1042,
+      "accepted_lines": 5710,
+      "overriden_lines": 0
+    },
+    "c2054424e6848147": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "dac935cc-4826-4512-8050-77b771e9037f",
+        "model": "composer-2.5"
+      },
+      "human_author": "vindreshsingh <52521987+vindreshsingh@users.noreply.github.com>",
+      "messages": [],
+      "total_additions": 1081,
+      "total_deletions": 180,
+      "accepted_lines": 847,
+      "overriden_lines": 0
+    }
+  }
+}
