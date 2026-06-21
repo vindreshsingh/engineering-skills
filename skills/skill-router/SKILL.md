@@ -159,6 +159,8 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | You're about to… | Load |
 |------------------|------|
 | Route or pick the right skill (you are here) | [[skill-router]] |
+| Drive a whole feature end-to-end (define → ship) | [[orchestrated-delivery]] |
+| Dispatch independent tasks to parallel subagents | [[parallel-subagents]] |
 | Write or improve a skill in this repo | [[skill-creator]] |
 
 ### 3. Disambiguate when several skills seem to fit
@@ -269,6 +271,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | **Ship** | git-flow, pipeline-ops, migration-path, decision-docs, technical-writing, launch-readiness |
 | **Operate** | observability, incident-response, finops-budget |
 | **Grow** | growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
+| **Orchestrate** | orchestrated-delivery (conductor across all phases), parallel-subagents |
 | **Meta** | skill-router, skill-creator |
 
 Finishing one phase **points to the next** — e.g. after Build + Verify, load [[review-gate]] before merge.
