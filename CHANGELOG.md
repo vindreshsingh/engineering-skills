@@ -6,6 +6,9 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Behavioral test coverage reached 100%** — every one of the 52 process skills now has a
+  pressure-scenario test (meta routers excluded). Added the remaining 24 tests across engineering and
+  marketing skills; `scripts/skill-test.sh` excludes meta skills from the coverage denominator.
 - **Launch kit + discovery.** Repo description and topics set for GitHub discovery; README hero with
   badges and an honest comparison; a `docs/launch/` go-to-market kit (positioning, announcement post,
   Show HN / X / LinkedIn copy, SEO plan) drafted with the repo's own marketing skills.

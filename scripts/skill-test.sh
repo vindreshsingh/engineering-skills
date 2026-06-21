@@ -18,6 +18,8 @@ errors=0
 fail() { printf '  ✗ %s\n' "$1"; errors=$((errors + 1)); }
 
 required=("## Scenario" "## Without the skill" "## With the skill" "## Rationalizations to resist" "## Pass criteria")
+# Meta skills are routers, not process skills — excluded from coverage (matches validate.sh).
+meta_skills=" skill-router "
 
 # Map of skill-name -> SKILL.md path (skills may be nested, e.g. skills/marketing/x)
 declare -a skill_names=()
@@ -56,13 +58,15 @@ if [ "$mode" != "--coverage" ]; then
   shopt -u nullglob
 fi
 
-# Coverage
+# Coverage (meta skills are routers, not process skills — excluded from the denominator)
 echo
 echo "Coverage:"
-total=${#skill_names[@]}
+total=0
 tested=0
 missing=()
 for n in "${skill_names[@]}"; do
+  case "$meta_skills" in *" $n "*) continue ;; esac
+  total=$((total + 1))
   if [ -f "tests/${n}.test.md" ]; then tested=$((tested + 1)); else missing+=("$n"); fi
 done
 pct=0; [ "$total" -gt 0 ] && pct=$(( tested * 100 / total ))
