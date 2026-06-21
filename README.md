@@ -25,6 +25,9 @@ two axes:
 
 It's new — competing on scope and rigor, not adoption. Honest feedback and PRs welcome.
 
+**See it work:** [a feature shipped end-to-end by the 40-role org](docs/launch/demo-walkthrough.md)
+(`/deliver Add product reviews`).
+
 ## Install (Claude Code plugin — use in any repo)
 
 From inside any project, in an interactive `claude` session:

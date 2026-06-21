@@ -10,6 +10,8 @@ made; this is about people knowing it exists.
 | Launch announcement post | `content-marketer` / `content-marketing` | [announcement.md](announcement.md) |
 | Show HN + X + LinkedIn | `social-media-manager` / `social-distribution` | [social.md](social.md) |
 | SEO + repo metadata | `seo-strategist` / `seo-growth` | [seo.md](seo.md) |
+| End-to-end demo (the pitch) | `orchestrated-delivery` | [demo-walkthrough.md](demo-walkthrough.md) |
+| Submissions (marketplace, awesome-lists) | `growth-lead` | [submissions.md](submissions.md) |
 
 ## Launch checklist
 
