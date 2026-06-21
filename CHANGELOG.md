@@ -5,6 +5,12 @@ All notable changes to this project are documented here. This project adheres to
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-06-21
+
+Highlights: behavioral skill testing at **100% coverage** (CI-enforced), enforced skill invocation, an
+**orchestrated build loop** (`orchestrated-delivery` + `parallel-subagents`), **multi-platform** entry
+points (Gemini, Cursor, Copilot, Codex/OpenCode), and a full launch kit with an end-to-end demo.
+
 ### Added
 - **End-to-end demo + submission kit.** `docs/launch/demo-walkthrough.md` shows the 40-role org
   shipping "Add Product Reviews" phase by phase (with a Mermaid flow diagram), linked from the README;
