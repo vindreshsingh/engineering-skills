@@ -1,10 +1,29 @@
 # engineering-skills
 
-A reusable, agent-agnostic collection of **production-grade engineering skills** for AI coding agents
-(Claude Code, Cursor, Copilot, Gemini, OpenCode, etc.). Each skill is a step-by-step process — not
-reference docs — that an agent follows, including verification steps, anti-patterns, and exit criteria.
+[![validate](https://github.com/vindreshsingh/engineering-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/vindreshsingh/engineering-skills/actions/workflows/validate.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![skills: 53](https://img.shields.io/badge/skills-53-brightgreen)
+![behaviorally tested: 52%](https://img.shields.io/badge/behaviorally%20tested-52%25-success)
 
-Packaged as a **Claude Code plugin marketplace** so you can install it once and use it in any repo.
+**Turn your AI coding agent into a disciplined engineering team.** A reusable, agent-agnostic library
+of **53 production-grade engineering skills** — each a step-by-step process with verification, not
+reference docs — plus a **40-role SDLC & marketing org** and an **orchestrated build loop** that
+conducts a feature end to end.
+
+Works with **Claude Code, Cursor, Gemini CLI, GitHub Copilot, and Codex / OpenCode**. Install once, use
+in any repo.
+
+## How it compares
+
+Most skill libraries are either narrow (the dev loop only) or unproven advice. This one is different on
+two axes:
+
+- **Breadth** — the full lifecycle *plus* a 40-persona org (PM, architect, DBA, QA, SRE, release… and a
+  marketing team), orchestrated by `orchestrated-delivery`.
+- **Rigor** — skills are **behaviorally tested**: over half have a pressure-scenario test that proves
+  the skill changes what the agent does, enforced in CI.
+
+It's new — competing on scope and rigor, not adoption. Honest feedback and PRs welcome.
 
 ## Install (Claude Code plugin — use in any repo)
 
