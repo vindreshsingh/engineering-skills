@@ -162,6 +162,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | Drive a whole feature end-to-end (define → ship) | [[orchestrated-delivery]] |
 | Dispatch independent tasks to parallel subagents | [[parallel-subagents]] |
 | Write or improve a skill in this repo | [[skill-creator]] |
+| Capture a lesson from this session back into the library | [[skill-harvest]] |
 
 ### 3. Disambiguate when several skills seem to fit
 
@@ -181,6 +182,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | [[growth-strategy]] vs [[content-marketing]] vs [[social-distribution]] | Plan/calendar/positioning → growth-strategy; long-form article → content-marketing; short posts/threads → social-distribution |
 | [[seo-growth]] vs [[content-marketing]] | Keyword map + on-page fixes → seo-growth; write the article → content-marketing |
 | [[resilience]] vs [[caching-strategy]] | Failure/retry/idempotency → resilience; speed repeated reads with staleness rules → caching-strategy |
+| [[skill-harvest]] vs [[skill-creator]] | Deciding *whether/what/where* to capture a lesson → skill-harvest; authoring/fixing the skill itself → skill-creator (harvest hands off to it) |
 
 When still unsure, prefer the skill **earlier in the lifecycle** — spec beats code, measure beats optimize.
 
@@ -201,6 +203,7 @@ These are typical sequences; run **one primary skill at a time**, chain when the
 
 ```text
 [[fault-recovery]] → [[test-first]] (regression test) → [[review-gate]]
+→ [[skill-harvest]] (if the root cause was non-obvious)
 ```
 
 **Production incident**
@@ -272,7 +275,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | **Operate** | observability, incident-response, finops-budget |
 | **Grow** | growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
 | **Orchestrate** | orchestrated-delivery (conductor across all phases), parallel-subagents |
-| **Meta** | skill-router, skill-creator |
+| **Meta** | skill-router, skill-creator, skill-harvest |
 
 Finishing one phase **points to the next** — e.g. after Build + Verify, load [[review-gate]] before merge.
 
@@ -294,7 +297,9 @@ Finishing one phase **points to the next** — e.g. after Build + Verify, load [
 If the task genuinely doesn't match anything:
 
 - Proceed with sound engineering judgment
-- Note the gap — recurring work without a skill → [[skill-creator]]
+- Note the gap — recurring work without a skill → [[skill-harvest]] (triage) → [[skill-creator]] (author)
+- After non-trivial work (tricky debug, repeated mistake, a skill that misfired), run [[skill-harvest]]
+  to capture the lesson before context is lost
 - Don't force-fit the wrong skill (e.g. [[simplify]] on an production incident)
 
 ## Common Rationalizations

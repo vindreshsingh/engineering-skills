@@ -5,6 +5,14 @@ All notable changes to this project are documented here. This project adheres to
 
 ## [Unreleased]
 
+### Added
+- **Self-improving skill loop (`skill-harvest`).** New meta-skill that captures a hard-won lesson from
+  the current session back into the library before context is lost — triaging it (new skill / improve
+  existing / guardrail / router fix / doc / drop) and handing keepers to `skill-creator`. Ships with a
+  `/harvest` command and a behavioral test, is wired into `skill-router` (Meta map, lifecycle table,
+  disambiguation vs `skill-creator`, and the bug-fix recipe), and the session-start hook now nudges a
+  harvest pass after non-trivial work. This closes the loop so the library compounds over time.
+
 ## [1.5.0] - 2026-06-21
 
 Highlights: behavioral skill testing at **100% coverage** (CI-enforced), enforced skill invocation, an

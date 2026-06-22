@@ -45,7 +45,10 @@ intro = (
     "says not to use a skill, follow the user. Skills override only your default behavior, never the "
     "user.\n\n"
     "Follow agent-guardrails before any destructive, secret, or security-breaking action. "
-    "Use skill-router for SDLC tasks; marketing/SKILL.md for growth."
+    "Use skill-router for SDLC tasks; marketing/SKILL.md for growth.\n\n"
+    "SELF-IMPROVING LOOP: After non-trivial work — a tricky debug, a repeated mistake, a workflow "
+    "that finally worked, or a skill that misfired — run skill-harvest before the session ends to "
+    "capture the lesson back into the library. Don't let hard-won lessons evaporate with the context."
 )
 msg = intro + "\n\n" + "\n\n---\n\n".join(parts)
 print(json.dumps({"priority": "IMPORTANT", "message": msg}))
