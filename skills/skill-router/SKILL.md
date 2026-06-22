@@ -113,6 +113,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | Confirm a web change in a real browser | [[browser-checks]] |
 | Automate critical user journeys (E2E) | [[e2e-testing]] |
 | Debug a failure, failing test, or surprise behavior | [[fault-recovery]] |
+| Guard a service boundary against breaking changes (consumer-driven contracts) | [[contract-testing]] |
 | Prove a change actually moved the metric (A/B test) | [[experimentation]] |
 
 #### Review — check before merge
@@ -197,6 +198,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | [[launch-readiness]] vs [[pipeline-ops]] | "Are we ready to ship this change?" → launch-readiness; "Fix the CI pipeline" → pipeline-ops |
 | [[feature-flags]] vs [[launch-readiness]] vs [[migration-path]] | Control *exposure* (dark launch, ramp, kill switch) → feature-flags; the full *readiness* gate → launch-readiness; *schema/contract* change rollout → migration-path |
 | [[experimentation]] vs [[test-first]] vs [[observability]] | Did the change move the *metric* (A/B) → experimentation; is the code *correct* → test-first; *instrument* the metric → observability |
+| [[contract-testing]] vs [[e2e-testing]] vs [[interface-design]] vs [[migration-path]] | Guard a *cross-deploy boundary* automatically → contract-testing; prove the *whole journey* works → e2e-testing; *design* the contract → interface-design; *roll out a deliberate break* → migration-path |
 | [[launch-campaign]] vs [[launch-readiness]] vs [[growth-strategy]] | Market a shipped feature end-to-end (the GTM conductor) → launch-campaign; *engineering* release gate (rollout/rollback/monitoring) → launch-readiness; one GTM plan/calendar without running the whole launch → growth-strategy |
 | [[autonomous-loops]] vs [[orchestrated-delivery]] vs [[long-running-agents]] | Build/supervise an unattended self-prompting loop → autonomous-loops; human-driven single feature through the lifecycle → orchestrated-delivery; long-horizon coherence mechanics (state, checkpoints, compaction) → long-running-agents |
 | [[agent-verification]] vs [[review-gate]] vs [[test-first]] | Check an agent's *completion claim* (independent, anti-self-grading) → agent-verification; human quality review of a finished diff → review-gate; write the tests that capture behavior → test-first |
@@ -253,13 +255,15 @@ These are typical sequences; run **one primary skill at a time**, chain when the
 
 ```text
 [[interface-design]] → [[test-first]] + [[incremental-delivery]]
+→ [[contract-testing]] (if consumers deploy separately)
 → [[hardening]] → [[review-gate]] → [[launch-readiness]]
 ```
 
 **Breaking API/schema change**
 
 ```text
-[[interface-design]] → [[migration-path]] → [[test-first]] → [[review-gate]] → [[launch-readiness]]
+[[interface-design]] → [[migration-path]] → [[contract-testing]] (verify when old shape is safe to drop)
+→ [[test-first]] → [[review-gate]] → [[launch-readiness]]
 ```
 
 **Slow checkout / page**
@@ -306,7 +310,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | **Define** | product-discovery, idea-shaping, product-brief, spec-first |
 | **Plan** | work-planning, product-grooming, threat-modeling |
 | **Build** | incremental-delivery, test-first, context-curation, source-first, ui-craft, micro-interactions, ux-design, accessibility, react-patterns, mobile-patterns, i18n-l10n, interface-design, design-handoff, resilience, data-modeling, caching-strategy, llm-feature-engineering |
-| **Verify** | browser-checks, e2e-testing, fault-recovery, experimentation |
+| **Verify** | browser-checks, e2e-testing, contract-testing, fault-recovery, experimentation |
 | **Review** | review-gate, simplify, hardening, perf-budget, dependency-hygiene, version-upgrade |
 | **Ship** | git-flow, pipeline-ops, feature-flags, migration-path, decision-docs, technical-writing, launch-readiness |
 | **Operate** | observability, incident-response, finops-budget |
