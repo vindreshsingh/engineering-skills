@@ -46,12 +46,13 @@ All notable changes to this project are documented here. This project adheres to
   through the Define and Plan phases with sign-off gates. Ships with the `/discover` command and a
   behavioral test, and is wired into `skill-router` (Define map, lifecycle, a discovery recipe, and
   disambiguation vs `idea-shaping` / `product-brief` / `orchestrated-delivery`). This is the
-  "discover" bookend the code-only competitors lack. New meta-skill that captures a hard-won lesson from
-  the current session back into the library before context is lost — triaging it (new skill / improve
-  existing / guardrail / router fix / doc / drop) and handing keepers to `skill-creator`. Ships with a
-  `/harvest` command and a behavioral test, is wired into `skill-router` (Meta map, lifecycle table,
-  disambiguation vs `skill-creator`, and the bug-fix recipe), and the session-start hook now nudges a
-  harvest pass after non-trivial work. This closes the loop so the library compounds over time.
+  "discover" bookend the code-only competitors lack.
+- **Self-improving skill loop (`skill-harvest`) + `/harvest`.** New meta-skill that captures a hard-won
+  lesson from the current session back into the library before context is lost — triaging it (new skill /
+  improve existing / guardrail / router fix / doc / drop) and handing keepers to `skill-creator`. Ships
+  with a `/harvest` command and a behavioral test, is wired into `skill-router` (Meta map, lifecycle
+  table, disambiguation vs `skill-creator`, and the bug-fix recipe), and the session-start hook now
+  nudges a harvest pass after non-trivial work. This closes the loop so the library compounds over time.
 
 ## [1.5.0] - 2026-06-21
 
