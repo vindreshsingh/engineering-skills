@@ -6,6 +6,14 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **`agent-memory` + `/agent-memory`.** Completes the Operate-Autonomously cluster with durable
+  cross-session agent memory: persist only high-signal facts (no secrets, run state, or one-offs), keep
+  memory separate from single-run state, scope each memory to a context/identity with governed
+  read/write, retrieve by relevance instead of dumping the store, write structured attributed memories,
+  and govern drift/poisoning (don't over-generalize, re-verify remembered facts against reality, gate
+  writes, curate by update/merge/prune). Wired into `skill-router` (Meta/Operate-Autonomously map,
+  lifecycle, disambiguation vs `context-curation` / `long-running-agents` / `skill-harvest`) with a
+  behavioral test (coverage stays 100%).
 - **Operate-Autonomously cluster — running agents in loops and over long horizons.** Three new skills
   closing the gap that the "loop engineering" / "long-running agents" body of work describes:
   - **`autonomous-loops` + `/autoloop`** — design & supervise a self-prompting loop accountably:
