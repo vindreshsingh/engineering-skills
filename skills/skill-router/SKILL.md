@@ -53,6 +53,7 @@ Read the user's ask for **intent**, not keywords alone:
 | Know what to build, need spec before code | Define | [[spec-first]] |
 | Groom backlog before sprint planning | Plan | [[product-grooming]] |
 | Spec exists, need tasks/order/estimate | Plan | [[work-planning]] |
+| Security-sensitive design (auth, data, money, input) | Plan | [[threat-modeling]] |
 | Implement, add feature, change behavior | Build | [[incremental-delivery]] + [[test-first]] |
 | Something broke / unexpected behavior (dev) | Verify | [[fault-recovery]] |
 | Something broke in **production** / alert firing | Operate | [[incident-response]] |
@@ -84,6 +85,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | You're about to… | Load |
 |------------------|------|
 | Break work into ordered, verifiable tasks | [[work-planning]] |
+| Find security risks at design time (auth, data, money, input) | [[threat-modeling]] |
 
 #### Build — implement correctly
 
@@ -111,6 +113,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | Confirm a web change in a real browser | [[browser-checks]] |
 | Automate critical user journeys (E2E) | [[e2e-testing]] |
 | Debug a failure, failing test, or surprise behavior | [[fault-recovery]] |
+| Prove a change actually moved the metric (A/B test) | [[experimentation]] |
 
 #### Review — check before merge
 
@@ -129,6 +132,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 |------------------|------|
 | Commit, branch, merge, recover git mistakes | [[git-flow]] |
 | Set up or fix CI/CD, builds, deploy automation | [[pipeline-ops]] |
+| Ship dark / gradual rollout / kill switch behind a flag | [[feature-flags]] |
 | Change schema/API/deps others depend on | [[migration-path]] |
 | Record a technical decision or fix docs | [[decision-docs]] |
 | Design UX flows before UI | [[ux-design]] |
@@ -186,10 +190,13 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | [[ui-craft]] vs [[accessibility]] vs [[design-handoff]] vs [[micro-interactions]] | General UI → ui-craft; a11y compliance → accessibility; mockup → design-handoff; click/route motion → micro-interactions |
 | [[simplify]] vs [[review-gate]] | Dedicated cleanup/refactor → simplify; PR review gate → review-gate (may *suggest* simplify) |
 | [[hardening]] vs [[review-gate]] | Deep security work or audit → hardening; general pre-merge review → review-gate (includes light security) |
+| [[threat-modeling]] vs [[hardening]] vs [[agent-guardrails]] | *Design-time* "how could this be attacked?" → threat-modeling; security issues in a *written diff* → hardening; *runtime* blocking of dangerous agent actions → agent-guardrails |
 | [[source-first]] vs [[context-curation]] | Verify behavior/API → source-first; manage total files in agent context → context-curation |
 | [[dependency-hygiene]] vs [[version-upgrade]] vs [[migration-path]] | Vet/add/audit deps → dependency-hygiene; bump vendor version with research → version-upgrade; your API/schema breaks consumers → migration-path |
 | [[migration-path]] vs [[interface-design]] | Designing the contract → interface-design; rolling out breaking change → migration-path |
 | [[launch-readiness]] vs [[pipeline-ops]] | "Are we ready to ship this change?" → launch-readiness; "Fix the CI pipeline" → pipeline-ops |
+| [[feature-flags]] vs [[launch-readiness]] vs [[migration-path]] | Control *exposure* (dark launch, ramp, kill switch) → feature-flags; the full *readiness* gate → launch-readiness; *schema/contract* change rollout → migration-path |
+| [[experimentation]] vs [[test-first]] vs [[observability]] | Did the change move the *metric* (A/B) → experimentation; is the code *correct* → test-first; *instrument* the metric → observability |
 | [[launch-campaign]] vs [[launch-readiness]] vs [[growth-strategy]] | Market a shipped feature end-to-end (the GTM conductor) → launch-campaign; *engineering* release gate (rollout/rollback/monitoring) → launch-readiness; one GTM plan/calendar without running the whole launch → growth-strategy |
 | [[autonomous-loops]] vs [[orchestrated-delivery]] vs [[long-running-agents]] | Build/supervise an unattended self-prompting loop → autonomous-loops; human-driven single feature through the lifecycle → orchestrated-delivery; long-horizon coherence mechanics (state, checkpoints, compaction) → long-running-agents |
 | [[agent-verification]] vs [[review-gate]] vs [[test-first]] | Check an agent's *completion claim* (independent, anti-self-grading) → agent-verification; human quality review of a finished diff → review-gate; write the tests that capture behavior → test-first |
@@ -297,11 +304,11 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | Phase | Skills |
 |-------|--------|
 | **Define** | product-discovery, idea-shaping, product-brief, spec-first |
-| **Plan** | work-planning, product-grooming |
+| **Plan** | work-planning, product-grooming, threat-modeling |
 | **Build** | incremental-delivery, test-first, context-curation, source-first, ui-craft, micro-interactions, ux-design, accessibility, react-patterns, mobile-patterns, i18n-l10n, interface-design, design-handoff, resilience, data-modeling, caching-strategy, llm-feature-engineering |
-| **Verify** | browser-checks, e2e-testing, fault-recovery |
+| **Verify** | browser-checks, e2e-testing, fault-recovery, experimentation |
 | **Review** | review-gate, simplify, hardening, perf-budget, dependency-hygiene, version-upgrade |
-| **Ship** | git-flow, pipeline-ops, migration-path, decision-docs, technical-writing, launch-readiness |
+| **Ship** | git-flow, pipeline-ops, feature-flags, migration-path, decision-docs, technical-writing, launch-readiness |
 | **Operate** | observability, incident-response, finops-budget |
 | **Grow** | launch-campaign (Grow conductor), growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
 | **Orchestrate** | orchestrated-delivery (conductor across all phases), parallel-subagents |

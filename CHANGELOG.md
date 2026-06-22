@@ -6,6 +6,23 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Three structural-gap skills — security, validation, and release control.** Filling holes that had
+  an agent but no process skill:
+  - **`threat-modeling` + `/threat-model`** — design-time security: model the system and trust
+    boundaries, enumerate threats systematically (STRIDE), rate by likelihood × impact, and record a
+    response for every one (mitigate/eliminate/transfer/accept). Sits between `agent-guardrails`
+    (runtime) and `hardening` (code review); gives the `security-architect` agent a process.
+  - **`experimentation` + `/experiment`** — valid A/B testing: a falsifiable hypothesis, one primary
+    metric plus guardrails, a pre-computed sample size, correct randomization, and an honest readout
+    (no peeking, confidence intervals, "no effect" is a result). Closes the discover→build→measure
+    loop; homes the `product-analyst` agent's experiment work.
+  - **`feature-flags` + `/flag`** — decouple deploy from release: typed flags, safe defaults, both
+    paths tested, single-seam gating, gradual rollout with a tested kill switch, a flag registry, and
+    mandatory removal after rollout. Pairs with `launch-readiness` and `experimentation`.
+
+  All three ship with commands and behavioral tests (coverage stays 100%) and are wired into
+  `skill-router` (classify signals, Plan/Verify/Ship maps, lifecycle, and disambiguation vs
+  `hardening`/`agent-guardrails`, `test-first`/`observability`, and `launch-readiness`/`migration-path`).
 - **`agent-memory` + `/agent-memory`.** Completes the Operate-Autonomously cluster with durable
   cross-session agent memory: persist only high-signal facts (no secrets, run state, or one-offs), keep
   memory separate from single-run state, scope each memory to a context/identity with governed
