@@ -6,6 +6,13 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Agent & Skill Explorer (local web page).** A self-contained, zero-dependency `explorer/index.html`
+  (served at `localhost:8000`) that lists every skill and agent grouped by lifecycle phase, with search,
+  phase/group filters, and a "copy prompt" button that composes a ready-to-paste Claude Code prompt
+  scoped to an optional repo/task. Generated from the same `SKILL.md` / agent frontmatter as the catalog
+  by `scripts/generate-explorer.py` (+ `scripts/explorer-template.html`), so it never drifts. It's a
+  storefront, not a runtime — copied prompts run in Claude Code under its permissions and
+  `agent-guardrails`.
 - **`contract-testing` + `/contract`.** Consumer-driven contract testing for independently-deployed
   services: derive each contract from what the consumer actually uses, verify both sides against the
   same artifact, share contracts so the provider checks every live consumer, and fail the provider's CI

@@ -87,6 +87,20 @@ Per-tool install and usage: [`docs/platforms.md`](docs/platforms.md). General gu
 See [SKILLS.md](SKILLS.md) for the full auto-generated catalog. **End-to-end example:**
 [docs/sdlc-walkthrough.md](docs/sdlc-walkthrough.md).
 
+## Explore (local web page)
+
+A self-contained Agent & Skill Explorer — browse every skill and agent grouped by lifecycle phase,
+search, and copy a ready-to-paste Claude Code prompt (optionally scoped to a repo/task):
+
+```bash
+python3 scripts/generate-explorer.py          # regenerate explorer/index.html from frontmatter
+python3 -m http.server 8000 --directory explorer   # then open http://localhost:8000
+```
+
+It's a **storefront, not a runtime**: the copied prompt runs in Claude Code, under its permissions and
+this repo's `agent-guardrails`. The page is generated from the same `SKILL.md` / agent frontmatter as
+the catalog, so it never drifts.
+
 ## Agent personas
 
 Three general reviewer personas:

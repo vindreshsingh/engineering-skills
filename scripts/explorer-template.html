@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>engineering-skills · Agent &amp; Skill Explorer</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --panel-2: #1c2330; --border: #2a3038;
+    --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --accent-2: #7ee787;
+    --chip: #21262d; --shadow: 0 1px 0 rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: radial-gradient(1200px 600px at 70% -10%, #15202b 0%, var(--bg) 55%);
+    color: var(--text); font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
+  header h1 { margin: 0 0 4px; font-size: 26px; letter-spacing: -.02em; }
+  header p { margin: 0; color: var(--muted); }
+  .counts { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .counts span { background: var(--chip); border: 1px solid var(--border); border-radius: 999px; padding: 3px 11px; font-size: 12.5px; color: var(--muted); }
+  .counts b { color: var(--text); }
+
+  .controls { position: sticky; top: 0; z-index: 5; background: linear-gradient(var(--bg), rgba(13,17,23,.92)); padding: 16px 0 10px; margin-top: 18px; backdrop-filter: blur(6px); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .tabs { display: inline-flex; background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 3px; }
+  .tabs button { background: none; border: 0; color: var(--muted); padding: 7px 14px; border-radius: 7px; cursor: pointer; font-size: 14px; font-weight: 600; }
+  .tabs button.active { background: var(--panel-2); color: var(--text); box-shadow: var(--shadow); }
+  input[type=text] { flex: 1; min-width: 220px; background: var(--panel); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 9px 13px; font-size: 14px; outline: none; }
+  input[type=text]:focus { border-color: var(--accent); }
+  .context { margin-top: 10px; }
+  .context label { color: var(--muted); font-size: 12.5px; display: block; margin-bottom: 4px; }
+
+  .chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; }
+  .chip { background: var(--chip); border: 1px solid var(--border); color: var(--muted); padding: 5px 11px; border-radius: 999px; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+  .chip:hover { color: var(--text); }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #051018; font-weight: 600; }
+
+  .section-title { margin: 26px 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .section-title .n { color: var(--text); background: var(--chip); border-radius: 999px; padding: 1px 8px; font-size: 11.5px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 15px 16px 14px; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+  .card:hover { border-color: #3a4452; }
+  .card .top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 7px; }
+  .card .name { font-weight: 700; font-size: 15.5px; letter-spacing: -.01em; }
+  .badge { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
+  .badge.phase { color: var(--accent); border-color: #294b73; background: #0f2235; }
+  .badge.grp { color: var(--accent-2); border-color: #2c4a32; background: #11241a; }
+  .cmd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--accent-2); background: #0f1a14; border: 1px solid #213024; border-radius: 6px; padding: 1px 7px; }
+  .desc { color: #c9d4e0; font-size: 13.5px; margin: 2px 0 12px; flex: 1; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 7px 11px; font-size: 12.5px; cursor: pointer; font-weight: 600; }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.copied { border-color: var(--accent-2); color: var(--accent-2); }
+  .muted { color: var(--muted); }
+  .empty { color: var(--muted); padding: 40px 0; text-align: center; }
+  footer { margin-top: 40px; color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--border); padding-top: 16px; }
+  .toast { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--panel-2); border: 1px solid var(--accent-2); color: var(--accent-2); padding: 9px 16px; border-radius: 10px; font-size: 13px; opacity: 0; transition: .2s; pointer-events: none; box-shadow: var(--shadow); }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Agent &amp; Skill Explorer</h1>
+    <p>Browse the <code>engineering-skills</code> library — pick a skill or agent, scope it to your repo, and copy a ready-to-paste Claude&nbsp;Code prompt.</p>
+    <div class="counts" id="counts"></div>
+  </header>
+
+  <div class="controls">
+    <div class="row">
+      <div class="tabs">
+        <button id="tab-skills" class="active" onclick="setTab('skills')">Skills</button>
+        <button id="tab-agents" onclick="setTab('agents')">Agents</button>
+      </div>
+      <input type="text" id="search" placeholder="Search by name or description…" oninput="render()" />
+    </div>
+    <div class="context">
+      <label for="ctx">Working context (optional) — a repo path or a task; it's appended to every copied prompt</label>
+      <input type="text" id="ctx" placeholder="e.g. ~/code/my-app — add a checkout discount feature" />
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div id="results"></div>
+
+  <footer>
+    Generated from this repo's <code>SKILL.md</code> / agent frontmatter by <code>scripts/generate-explorer.py</code> — do not edit by hand.
+    This is a storefront, not a runtime: copied prompts run in <b>Claude&nbsp;Code</b>, under its permissions and this repo's <code>agent-guardrails</code>.
+  </footer>
+</div>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+let tab = 'skills';
+let filter = 'All';
+
+function ctx() { return document.getElementById('ctx').value.trim(); }
+
+function skillPrompt(s) {
+  const base = s.command
+    ? s.command
+    : `Follow the ${s.name} skill (skills/${s.name}/SKILL.md).`;
+  const c = ctx();
+  return c ? `${base} ${c}` : base;
+}
+function agentPrompt(a) {
+  const skillRef = a.primarySkill ? ` Load its primary skill skills/${a.primarySkill}/SKILL.md and follow the process.` : '';
+  const base = `Adopt the ${a.name} agent (${a.path}).${skillRef}`;
+  const c = ctx();
+  return c ? `${base} Task: ${c}` : base;
+}
+
+function copy(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) { btn.classList.add('copied'); const t = btn.textContent; btn.textContent = '✓ Copied'; setTimeout(() => { btn.classList.remove('copied'); btn.textContent = t; }, 1100); }
+    const toast = document.getElementById('toast'); toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 1100);
+  });
+}
+// Build the prompt at click time so the working-context input is always current.
+function copySkill(name, btn) { const s = DATA.skills.find(x => x.name === name); if (s) copy(skillPrompt(s), btn); }
+function copyAgent(name, btn) { const a = DATA.agents.find(x => x.name === name); if (a) copy(agentPrompt(a), btn); }
+
+function setTab(t) {
+  tab = t; filter = 'All';
+  document.getElementById('tab-skills').classList.toggle('active', t === 'skills');
+  document.getElementById('tab-agents').classList.toggle('active', t === 'agents');
+  render();
+}
+
+function esc(s) { return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function renderChips() {
+  const chips = document.getElementById('chips');
+  let opts;
+  if (tab === 'skills') opts = ['All', ...DATA.phases];
+  else opts = ['All', 'sdlc', 'marketing'];
+  chips.innerHTML = opts.map(o =>
+    `<span class="chip ${o === filter ? 'active' : ''}" onclick="filter='${o}';render()">${esc(o === 'sdlc' ? 'SDLC' : o)}</span>`
+  ).join('');
+}
+
+function render() {
+  renderChips();
+  const q = document.getElementById('search').value.toLowerCase();
+  const results = document.getElementById('results');
+  const match = (o) => (o.name + ' ' + o.description).toLowerCase().includes(q);
+
+  if (tab === 'skills') {
+    const items = DATA.skills.filter(match).filter(s => filter === 'All' || s.phase === filter);
+    const phases = (filter === 'All' ? DATA.phases : [filter]).filter(p => items.some(s => s.phase === p));
+    results.innerHTML = phases.length ? phases.map(p => {
+      const cards = items.filter(s => s.phase === p).map(s => `
+        <div class="card">
+          <div class="top">
+            <span class="name">${esc(s.name)}</span>
+            <span class="badge phase">${esc(s.phase)}</span>
+            ${s.command ? `<span class="cmd">${esc(s.command)}</span>` : ''}
+          </div>
+          <div class="desc">${esc(s.description)}</div>
+          <div class="actions">
+            <button class="btn" onclick="copySkill('${esc(s.name)}', this)">Copy prompt</button>
+          </div>
+        </div>`).join('');
+      return `<div class="section-title">${esc(p)} <span class="n">${items.filter(s => s.phase === p).length}</span></div><div class="grid">${cards}</div>`;
+    }).join('') : `<div class="empty">No skills match.</div>`;
+  } else {
+    const items = DATA.agents.filter(match).filter(a => filter === 'All' || a.group === filter);
+    const groups = (filter === 'All' ? ['sdlc', 'marketing'] : [filter]).filter(g => items.some(a => a.group === g));
+    results.innerHTML = groups.length ? groups.map(g => {
+      const cards = items.filter(a => a.group === g).map(a => `
+        <div class="card">
+          <div class="top">
+            <span class="name">${esc(a.name)}</span>
+            <span class="badge grp">${g === 'sdlc' ? 'SDLC' : 'marketing'}</span>
+            ${a.primarySkill ? `<span class="cmd">${esc(a.primarySkill)}</span>` : ''}
+          </div>
+          <div class="desc">${esc(a.description)}</div>
+          <div class="actions">
+            <button class="btn" onclick="copyAgent('${esc(a.name)}', this)">Copy prompt</button>
+          </div>
+        </div>`).join('');
+      return `<div class="section-title">${g === 'sdlc' ? 'SDLC' : 'Marketing'} agents <span class="n">${items.filter(a => a.group === g).length}</span></div><div class="grid">${cards}</div>`;
+    }).join('') : `<div class="empty">No agents match.</div>`;
+  }
+}
+
+document.getElementById('counts').innerHTML =
+  `<span><b>${DATA.counts.skills}</b> skills</span><span><b>${DATA.counts.agents}</b> agents</span><span><b>${DATA.counts.phases}</b> lifecycle phases</span>`;
+render();
+</script>
+</body>
+</html>
