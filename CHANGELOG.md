@@ -6,7 +6,14 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
-- **Self-improving skill loop (`skill-harvest`).** New meta-skill that captures a hard-won lesson from
+- **PM discovery pipeline (`product-discovery`) + `/discover`.** New discovery conductor that turns a
+  one-line idea into a decision-ready package — validated problem, PRD with scope and acceptance
+  criteria, primary success metric, RFC handoff decision, and an ordered task breakdown — by running
+  the PM persona trio (`business-analyst` → `product-manager` → `product-analyst` → `team-lead`)
+  through the Define and Plan phases with sign-off gates. Ships with the `/discover` command and a
+  behavioral test, and is wired into `skill-router` (Define map, lifecycle, a discovery recipe, and
+  disambiguation vs `idea-shaping` / `product-brief` / `orchestrated-delivery`). This is the
+  "discover" bookend the code-only competitors lack. New meta-skill that captures a hard-won lesson from
   the current session back into the library before context is lost — triaging it (new skill / improve
   existing / guardrail / router fix / doc / drop) and handing keepers to `skill-creator`. Ships with a
   `/harvest` command and a behavioral test, is wired into `skill-router` (Meta map, lifecycle table,

@@ -47,6 +47,7 @@ Read the user's ask for **intent**, not keywords alone:
 
 | Signal | Likely phase | First skill to load |
 |--------|--------------|---------------------|
+| One-line idea → full buildable, measurable plan | Define | [[product-discovery]] |
 | Vague idea, "should we build…?" | Define | [[idea-shaping]] |
 | Need PRD, RFC, stakeholder alignment | Define | [[product-brief]] |
 | Know what to build, need spec before code | Define | [[spec-first]] |
@@ -71,6 +72,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 
 | You're about to… | Load |
 |------------------|------|
+| Run a raw idea through full discovery (problem → PRD → metrics → tasks) | [[product-discovery]] |
 | Shape a raw idea into something concrete | [[idea-shaping]] |
 | Write a PRD / product brief / RFC | [[product-brief]] |
 | Define what to build before coding | [[spec-first]] |
@@ -168,6 +170,8 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 
 | Tension | Choose |
 |---------|--------|
+| [[product-discovery]] vs [[idea-shaping]] vs [[product-brief]] | Whole front-of-funnel (problem → PRD → metrics → task plan) → product-discovery; sharpen one fuzzy idea only → idea-shaping; one PRD for an already-validated problem → product-brief |
+| [[product-discovery]] vs [[orchestrated-delivery]] | Idea → validated, scoped, planned (stops before build) → product-discovery; carry the feature all the way to ship → orchestrated-delivery |
 | [[idea-shaping]] vs [[spec-first]] | Idea fuzzy → shape first; problem clear → spec |
 | [[product-brief]] vs [[spec-first]] | Stakeholders/PRD/RFC → brief; eng implementation spec → spec-first |
 | [[fault-recovery]] vs [[incident-response]] | Dev/local/staging debug → fault-recovery; **prod outage/alert** → incident-response |
@@ -190,10 +194,17 @@ When still unsure, prefer the skill **earlier in the lifecycle** — spec beats 
 
 These are typical sequences; run **one primary skill at a time**, chain when the phase completes.
 
+**Idea → buildable plan (discovery)**
+
+```text
+[[product-discovery]]  (runs idea-shaping → product-brief → success metrics
+→ RFC handoff → work-planning, gating on sign-off) → hand off to Build
+```
+
 **New feature (full lifecycle)**
 
 ```text
-[[idea-shaping]]? → [[spec-first]] → [[work-planning]]
+[[product-discovery]] (or [[idea-shaping]]? → [[spec-first]]) → [[work-planning]]
 → [[incremental-delivery]] + [[test-first]]
 → [[browser-checks]] (if UI) → [[review-gate]]
 → [[launch-readiness]]
@@ -266,7 +277,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 
 | Phase | Skills |
 |-------|--------|
-| **Define** | idea-shaping, product-brief, spec-first |
+| **Define** | product-discovery, idea-shaping, product-brief, spec-first |
 | **Plan** | work-planning, product-grooming |
 | **Build** | incremental-delivery, test-first, context-curation, source-first, ui-craft, micro-interactions, ux-design, accessibility, react-patterns, mobile-patterns, i18n-l10n, interface-design, design-handoff, resilience, data-modeling, caching-strategy, llm-feature-engineering |
 | **Verify** | browser-checks, e2e-testing, fault-recovery |
