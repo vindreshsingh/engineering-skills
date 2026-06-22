@@ -6,6 +6,22 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Operate-Autonomously cluster — running agents in loops and over long horizons.** Three new skills
+  closing the gap that the "loop engineering" / "long-running agents" body of work describes:
+  - **`autonomous-loops` + `/autoloop`** — design & supervise a self-prompting loop accountably:
+    verifiable stop condition, maker/checker split, isolation + PR integration, iteration/time/token
+    circuit breakers, a triage inbox for decisions the loop must not make, and the human as verifier
+    (guards against comprehension debt and cognitive surrender).
+  - **`long-running-agents` + `/longrun`** — keep an agent coherent across hours/days: external plan +
+    progress files, commit-based checkpoints, deliberate context compaction/handoff to fight context
+    rot and alignment drift, tested state reconstitution, and a planner/worker/judge split for fleets.
+  - **`agent-verification` + `/agent-verify`** — stop premature "done": separate generation from
+    evaluation with an independent (ideally different-model) checker, run rather than read, enforce a
+    test ratchet, catch early termination, and re-verify at handoff boundaries.
+
+  All three ship with commands and behavioral tests (coverage stays 100%) and are wired into
+  `skill-router` (Meta/Operate-Autonomously map, classify signals, lifecycle, an autonomous-run recipe,
+  and disambiguation vs `orchestrated-delivery` / `review-gate` / `test-first`).
 - **GTM launch pipeline (`launch-campaign`) + `/launch`.** New Grow-phase conductor that turns a
   shipped feature into a complete launch kit — positioning, seeded community, SEO landing, launch
   content, a per-platform social post pack, email and referral loops, and a measurement plan — by

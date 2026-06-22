@@ -60,6 +60,7 @@ Read the user's ask for **intent**, not keywords alone:
 | Deploy / release / go live | Ship | [[launch-readiness]] |
 | Launch a shipped feature — full go-to-market | Grow | [[launch-campaign]] |
 | Market product / grow traffic / SEO / social | Grow | [[growth-strategy]] — see `marketing/SKILL.md` and `skills/marketing/` |
+| Run an agent unattended, on a loop, or over many hours | Meta | [[autonomous-loops]] / [[long-running-agents]] |
 | Not sure | Meta | Stay here; use maps below |
 
 If the request mixes phases ("build and ship today"), **still sequence** — define/plan may be a 5-minute
@@ -165,6 +166,9 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | Route or pick the right skill (you are here) | [[skill-router]] |
 | Drive a whole feature end-to-end (define → ship) | [[orchestrated-delivery]] |
 | Dispatch independent tasks to parallel subagents | [[parallel-subagents]] |
+| Run an agent unattended / on a self-prompting loop | [[autonomous-loops]] |
+| Keep an agent coherent across hours/days (state, checkpoints, compaction) | [[long-running-agents]] |
+| Verify an agent's "done" claim with an independent check | [[agent-verification]] |
 | Write or improve a skill in this repo | [[skill-creator]] |
 | Capture a lesson from this session back into the library | [[skill-harvest]] |
 
@@ -186,6 +190,8 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | [[migration-path]] vs [[interface-design]] | Designing the contract → interface-design; rolling out breaking change → migration-path |
 | [[launch-readiness]] vs [[pipeline-ops]] | "Are we ready to ship this change?" → launch-readiness; "Fix the CI pipeline" → pipeline-ops |
 | [[launch-campaign]] vs [[launch-readiness]] vs [[growth-strategy]] | Market a shipped feature end-to-end (the GTM conductor) → launch-campaign; *engineering* release gate (rollout/rollback/monitoring) → launch-readiness; one GTM plan/calendar without running the whole launch → growth-strategy |
+| [[autonomous-loops]] vs [[orchestrated-delivery]] vs [[long-running-agents]] | Build/supervise an unattended self-prompting loop → autonomous-loops; human-driven single feature through the lifecycle → orchestrated-delivery; long-horizon coherence mechanics (state, checkpoints, compaction) → long-running-agents |
+| [[agent-verification]] vs [[review-gate]] vs [[test-first]] | Check an agent's *completion claim* (independent, anti-self-grading) → agent-verification; human quality review of a finished diff → review-gate; write the tests that capture behavior → test-first |
 | [[growth-strategy]] vs [[content-marketing]] vs [[social-distribution]] | Plan/calendar/positioning → growth-strategy; long-form article → content-marketing; short posts/threads → social-distribution |
 | [[seo-growth]] vs [[content-marketing]] | Keyword map + on-page fixes → seo-growth; write the article → content-marketing |
 | [[resilience]] vs [[caching-strategy]] | Failure/retry/idempotency → resilience; speed repeated reads with staleness rules → caching-strategy |
@@ -218,6 +224,14 @@ These are typical sequences; run **one primary skill at a time**, chain when the
 ```text
 [[fault-recovery]] → [[test-first]] (regression test) → [[review-gate]]
 → [[skill-harvest]] (if the root cause was non-obvious)
+```
+
+**Unattended / autonomous run**
+
+```text
+[[autonomous-loops]] (stop condition, maker/checker, circuit breakers, triage inbox)
++ [[long-running-agents]] (external state, checkpoints, compaction)
++ [[agent-verification]] (independent "done" check) → human reviews the batch before merge
 ```
 
 **Production incident**
@@ -290,6 +304,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | **Grow** | launch-campaign (Grow conductor), growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
 | **Orchestrate** | orchestrated-delivery (conductor across all phases), parallel-subagents |
 | **Meta** | skill-router, skill-creator, skill-harvest |
+| **Operate autonomously** | autonomous-loops (loop conductor), long-running-agents, agent-verification |
 
 Finishing one phase **points to the next** — e.g. after Build + Verify, load [[review-gate]] before merge.
 
