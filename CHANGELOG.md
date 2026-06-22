@@ -6,6 +6,13 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **`contract-testing` + `/contract`.** Consumer-driven contract testing for independently-deployed
+  services: derive each contract from what the consumer actually uses, verify both sides against the
+  same artifact, share contracts so the provider checks every live consumer, and fail the provider's CI
+  build on a break — catching cross-service breaking changes at PR time instead of in production.
+  Routes deliberate breaks through `migration-path` and keeps a thin `e2e-testing` layer on top. Wired
+  into `skill-router` (Verify map, lifecycle, API recipes, and disambiguation vs `e2e-testing` /
+  `interface-design` / `migration-path`) with a behavioral test (coverage stays 100%).
 - **Three structural-gap skills — security, validation, and release control.** Filling holes that had
   an agent but no process skill:
   - **`threat-modeling` + `/threat-model`** — design-time security: model the system and trust
