@@ -58,6 +58,7 @@ Read the user's ask for **intent**, not keywords alone:
 | Something broke in **production** / alert firing | Operate | [[incident-response]] |
 | Review PR or own diff before merge | Review | [[review-gate]] |
 | Deploy / release / go live | Ship | [[launch-readiness]] |
+| Launch a shipped feature — full go-to-market | Grow | [[launch-campaign]] |
 | Market product / grow traffic / SEO / social | Grow | [[growth-strategy]] — see `marketing/SKILL.md` and `skills/marketing/` |
 | Not sure | Meta | Stay here; use maps below |
 
@@ -147,6 +148,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 
 | You're about to… | Load |
 |------------------|------|
+| Run a full go-to-market launch for a shipped feature | [[launch-campaign]] |
 | Plan go-to-market, positioning, campaign calendar | [[growth-strategy]] |
 | Write blog, tutorial, newsletter, landing copy | [[content-marketing]] |
 | Post on social, launch threads, distribute content | [[social-distribution]] |
@@ -183,6 +185,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | [[dependency-hygiene]] vs [[version-upgrade]] vs [[migration-path]] | Vet/add/audit deps → dependency-hygiene; bump vendor version with research → version-upgrade; your API/schema breaks consumers → migration-path |
 | [[migration-path]] vs [[interface-design]] | Designing the contract → interface-design; rolling out breaking change → migration-path |
 | [[launch-readiness]] vs [[pipeline-ops]] | "Are we ready to ship this change?" → launch-readiness; "Fix the CI pipeline" → pipeline-ops |
+| [[launch-campaign]] vs [[launch-readiness]] vs [[growth-strategy]] | Market a shipped feature end-to-end (the GTM conductor) → launch-campaign; *engineering* release gate (rollout/rollback/monitoring) → launch-readiness; one GTM plan/calendar without running the whole launch → growth-strategy |
 | [[growth-strategy]] vs [[content-marketing]] vs [[social-distribution]] | Plan/calendar/positioning → growth-strategy; long-form article → content-marketing; short posts/threads → social-distribution |
 | [[seo-growth]] vs [[content-marketing]] | Keyword map + on-page fixes → seo-growth; write the article → content-marketing |
 | [[resilience]] vs [[caching-strategy]] | Failure/retry/idempotency → resilience; speed repeated reads with staleness rules → caching-strategy |
@@ -263,10 +266,10 @@ These are typical sequences; run **one primary skill at a time**, chain when the
 **Product launch / go-to-market**
 
 ```text
-[[launch-readiness]] → [[growth-strategy]]
-→ [[community-engagement]] (seed before traffic)
-→ [[seo-growth]] + [[content-marketing]]
-→ [[social-distribution]] → [[growth-strategy]] (weekly review)
+[[launch-readiness]] (ship safely) → [[launch-campaign]]  (Grow conductor: runs
+growth-strategy → community-engagement [seed before traffic] → seo-growth
+→ content-marketing → social-distribution → email-nurture + referral-loop
+→ growth-strategy weekly review, gating on the ordering rule)
 ```
 
 ### 5. Apply lifecycle order across phases
@@ -284,7 +287,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | **Review** | review-gate, simplify, hardening, perf-budget, dependency-hygiene, version-upgrade |
 | **Ship** | git-flow, pipeline-ops, migration-path, decision-docs, technical-writing, launch-readiness |
 | **Operate** | observability, incident-response, finops-budget |
-| **Grow** | growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
+| **Grow** | launch-campaign (Grow conductor), growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
 | **Orchestrate** | orchestrated-delivery (conductor across all phases), parallel-subagents |
 | **Meta** | skill-router, skill-creator, skill-harvest |
 

@@ -37,6 +37,10 @@ Skill files live at `skills/marketing/<skill-name>/SKILL.md`.
 
 ### 2. Default sequence for a new product launch
 
+For a **full launch**, load [[launch-campaign]] — the Grow-phase conductor that runs this whole
+sequence with intake, sign-off, and the community-before-traffic ordering gate, and assembles the
+launch kit. Use the steps below directly only when running one phase in isolation.
+
 Run in this order unless the campaign brief says otherwise:
 
 ```text

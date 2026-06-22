@@ -6,6 +6,15 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **GTM launch pipeline (`launch-campaign`) + `/launch`.** New Grow-phase conductor that turns a
+  shipped feature into a complete launch kit — positioning, seeded community, SEO landing, launch
+  content, a per-platform social post pack, email and referral loops, and a measurement plan — by
+  running the marketing persona team (`growth-lead` → `community-manager` → `seo-strategist` →
+  `content-marketer` → `social-media-manager` → `email-marketer`/`referral-manager` → weekly review)
+  in order, gating on the community-before-traffic rule. Ships with the `/launch` command and a
+  behavioral test, and is wired into `skill-router` (Grow map, lifecycle, launch recipe, disambiguation
+  vs `launch-readiness` / `growth-strategy`) and the marketing router. Completes the
+  **discover → build → launch** arc; distinct from `/ship` (`launch-readiness`, the engineering gate).
 - **PM discovery pipeline (`product-discovery`) + `/discover`.** New discovery conductor that turns a
   one-line idea into a decision-ready package — validated problem, PRD with scope and acceptance
   criteria, primary success metric, RFC handoff decision, and an ordered task breakdown — by running
