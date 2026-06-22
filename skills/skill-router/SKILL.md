@@ -169,6 +169,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | Run an agent unattended / on a self-prompting loop | [[autonomous-loops]] |
 | Keep an agent coherent across hours/days (state, checkpoints, compaction) | [[long-running-agents]] |
 | Verify an agent's "done" claim with an independent check | [[agent-verification]] |
+| Give an agent durable memory across sessions (and govern drift) | [[agent-memory]] |
 | Write or improve a skill in this repo | [[skill-creator]] |
 | Capture a lesson from this session back into the library | [[skill-harvest]] |
 
@@ -192,6 +193,7 @@ Use the **primary intent** — the thing the user most needs done *right now*.
 | [[launch-campaign]] vs [[launch-readiness]] vs [[growth-strategy]] | Market a shipped feature end-to-end (the GTM conductor) → launch-campaign; *engineering* release gate (rollout/rollback/monitoring) → launch-readiness; one GTM plan/calendar without running the whole launch → growth-strategy |
 | [[autonomous-loops]] vs [[orchestrated-delivery]] vs [[long-running-agents]] | Build/supervise an unattended self-prompting loop → autonomous-loops; human-driven single feature through the lifecycle → orchestrated-delivery; long-horizon coherence mechanics (state, checkpoints, compaction) → long-running-agents |
 | [[agent-verification]] vs [[review-gate]] vs [[test-first]] | Check an agent's *completion claim* (independent, anti-self-grading) → agent-verification; human quality review of a finished diff → review-gate; write the tests that capture behavior → test-first |
+| [[agent-memory]] vs [[context-curation]] vs [[long-running-agents]] vs [[skill-harvest]] | Durable *cross-session* memory store (scope, retrieval, drift) → agent-memory; what's loaded *in one session* → context-curation; *single-run* plan/progress/handoff state → long-running-agents; promote a reusable *process* to the skill library → skill-harvest |
 | [[growth-strategy]] vs [[content-marketing]] vs [[social-distribution]] | Plan/calendar/positioning → growth-strategy; long-form article → content-marketing; short posts/threads → social-distribution |
 | [[seo-growth]] vs [[content-marketing]] | Keyword map + on-page fixes → seo-growth; write the article → content-marketing |
 | [[resilience]] vs [[caching-strategy]] | Failure/retry/idempotency → resilience; speed repeated reads with staleness rules → caching-strategy |
@@ -304,7 +306,7 @@ When a task spans phases, move **top-down** — don't jump to code if requiremen
 | **Grow** | launch-campaign (Grow conductor), growth-strategy, content-marketing, social-distribution, seo-growth, community-engagement, paid-ads, email-nurture, referral-loop (`skills/marketing/`) |
 | **Orchestrate** | orchestrated-delivery (conductor across all phases), parallel-subagents |
 | **Meta** | skill-router, skill-creator, skill-harvest |
-| **Operate autonomously** | autonomous-loops (loop conductor), long-running-agents, agent-verification |
+| **Operate autonomously** | autonomous-loops (loop conductor), long-running-agents, agent-verification, agent-memory |
 
 Finishing one phase **points to the next** — e.g. after Build + Verify, load [[review-gate]] before merge.
 
