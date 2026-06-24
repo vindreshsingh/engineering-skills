@@ -5,7 +5,7 @@ _Drafted as the `growth-lead` persona using the `growth-strategy` skill._
 ## One-line positioning
 
 **engineering-skills is the broadest agent-skills library** — the full software lifecycle *plus* a
-40-role SDLC and marketing org, with skills that are behaviorally tested and an orchestrated build loop
+38-role SDLC and marketing org, with skills that are behaviorally tested and an orchestrated build loop
 to run them. Works across Claude Code, Cursor, Gemini, Copilot, and Codex.
 
 ## ICP (who it's for)
@@ -26,15 +26,15 @@ growth). Existing skill libraries are either narrow (dev-loop only) or unproven.
 
 | vs. | They have | We have |
 |-----|-----------|---------|
-| superpowers (the leader) | Proven, official, huge adoption, deep dev loop | **Far broader scope** (full SDLC + 40 roles + marketing), behaviorally-tested skills, an org-aware orchestrated loop, multi-platform |
-| generic rules files | A prompt | 53 step-by-step processes with verification + tests |
+| superpowers (the leader) | Proven, official, huge adoption, deep dev loop | **Far broader scope** (full SDLC + 38 roles + marketing), behaviorally-tested skills, an org-aware orchestrated loop, multi-platform |
+| generic rules files | A prompt | 64 step-by-step processes with verification + tests |
 
 **We don't claim adoption** — we're new. We compete on **scope + rigor**, and we say so.
 
 ## Wedge & messaging
 
-- Wedge: "the only skills library with a **40-role org** that an agent can conduct end-to-end."
-- Proof points: 53 skills, **>50% behaviorally tested**, CI-validated, multi-platform, orchestrated
+- Wedge: "the only skills library with a **38-role org** that an agent can conduct end-to-end."
+- Proof points: 64 skills, **100% behaviorally tested**, CI-validated, multi-platform, orchestrated
   delivery loop.
 - Tone: confident on merit, honest about being early.
 
@@ -50,7 +50,7 @@ growth). Existing skill libraries are either narrow (dev-loop only) or unproven.
 
 - Week 1: README + badges, announcement post, Show HN, X/LinkedIn threads.
 - Week 2: marketplace submission, awesome-list PRs, respond to all feedback.
-- Week 3: a "build a feature with the 40-role org" demo (GIF/video) — the differentiator made visible.
+- Week 3: a "build a feature with the 38-role org" demo (GIF/video) — the differentiator made visible.
 - Week 4: review what converted (stars, installs, referrers); double down, cut what didn't.
 
 ## Success metrics

@@ -8,7 +8,7 @@ personal blog, or Medium. Adjust the voice to yours before posting._
 ## Title options
 
 - **"I gave my coding agent a whole engineering org"**
-- "engineering-skills: 53 tested skills + a 40-role team for your AI coding agent"
+- "engineering-skills: 64 tested skills + a 38-role team for your AI coding agent"
 - "Your coding agent can write code. Can it ship like a team?"
 
 ## Post
@@ -17,13 +17,13 @@ Coding agents are great at writing code and bad at *engineering*. They skip the 
 edge cases, forget the rollout plan, and have no concept of the work that surrounds the code — product,
 review, release, even growth.
 
-I built **engineering-skills** to fix that: a library of **53 step-by-step skills** that turn a coding
+I built **engineering-skills** to fix that: a library of **64 step-by-step skills** that turn a coding
 agent into something closer to a disciplined engineering team.
 
 **What makes it different from other skill libraries:**
 
 - **It covers the whole lifecycle, not just the dev loop.** Define → plan → build → verify → review →
-  ship → operate — plus a **40-role org** of personas (product manager, architect, DBA, QA, SRE,
+  ship → operate — plus a **38-role org** of personas (product manager, architect, DBA, QA, SRE,
   release manager… and a marketing team).
 - **The skills are behaviorally tested.** Most skill files are just good advice. Here, over half the
   skills have a *pressure-scenario test* that proves the skill changes what the agent does — watch it

@@ -5,7 +5,7 @@ morning ET. Use UTM tags on links to see what converts._
 
 ## Show HN
 
-**Title:** `Show HN: Engineering-skills – 53 tested skills + a 40-role org for AI coding agents`
+**Title:** `Show HN: Engineering-skills – 64 tested skills + a 38-role org for AI coding agents`
 
 **Body:**
 > Coding agents write code well but skip the engineering around it — specs, edge-case tests, rollout,
@@ -14,7 +14,7 @@ morning ET. Use UTM tags on links to see what converts._
 > Two things I haven't seen elsewhere:
 > 1. The skills are *behaviorally tested* — each has a pressure scenario proving the skill changes what
 >    the agent does, enforced in CI (>50% covered so far).
-> 2. It ships a 40-role org (PM, architect, DBA, QA, SRE, release… + marketing) and an orchestrated
+> 2. It ships a 38-role org (PM, architect, DBA, QA, SRE, release… + marketing) and an orchestrated
 >    loop that conducts a feature end to end.
 >
 > It's new — no big community yet. Competing on scope and rigor, not adoption. Works with Claude Code,
@@ -29,7 +29,7 @@ _Then reply to every comment in the first few hours — HN rewards engagement._
 
 1/ Your AI coding agent can write code. Can it ship like a team?
 
-I built engineering-skills: 53 step-by-step skills + a 40-role SDLC & marketing org for coding agents.
+I built engineering-skills: 64 step-by-step skills + a 38-role SDLC & marketing org for coding agents.
 Works with Claude Code, Cursor, Gemini, Copilot, Codex. 🧵
 
 2/ Most "skill" files are just advice. These are *tested*: each skill has a pressure scenario that
@@ -51,7 +51,7 @@ Try it / tear it apart: https://github.com/vindreshsingh/engineering-skills
 > I open-sourced **engineering-skills** — a library that turns an AI coding agent into a disciplined
 > engineering team.
 >
-> 53 step-by-step skills across the full lifecycle, a 40-role SDLC + marketing org, and an orchestrated
+> 64 step-by-step skills across the full lifecycle, a 38-role SDLC + marketing org, and an orchestrated
 > build loop. The part I'm proudest of: the skills are *behaviorally tested* — over half have a
 > pressure-scenario test proving they change the agent's behavior, enforced in CI.
 >

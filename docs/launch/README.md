@@ -26,6 +26,6 @@ made; this is about people knowing it exists.
 
 ## Honest framing for all copy
 
-Lead with what's **true and differentiated**: breadth (full SDLC + 40-role org + marketing),
+Lead with what's **true and differentiated**: breadth (full SDLC + 38-role org + marketing),
 behaviorally-tested skills, an orchestrated build loop, multi-platform. Be upfront that it's **new** —
 don't fake adoption. Credibility is the moat when you can't claim stars yet.

@@ -7,7 +7,7 @@
 
 **Turn your AI coding agent into a disciplined engineering team.** A reusable, agent-agnostic library
 of **64 production-grade engineering skills** — each a step-by-step process with verification, not
-reference docs — plus a **40-role SDLC & marketing org** and an **orchestrated build loop** that
+reference docs — plus a **38-role SDLC & marketing org** and an **orchestrated build loop** that
 conducts a feature end to end.
 
 Works with **Claude Code, Cursor, Gemini CLI, GitHub Copilot, and Codex / OpenCode**. Install once, use
@@ -25,7 +25,7 @@ two axes:
 
 It's new — competing on scope and rigor, not adoption. Honest feedback and PRs welcome.
 
-**See it work:** [a feature shipped end-to-end by the 40-role org](docs/launch/demo-walkthrough.md)
+**See it work:** [a feature shipped end-to-end by the 38-role org](docs/launch/demo-walkthrough.md)
 (`/deliver Add product reviews`).
 
 ## Install (Claude Code plugin — use in any repo)
