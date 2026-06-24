@@ -1,0 +1,41 @@
+name: pages
+
+# Publishes the Agent & Skill Explorer (explorer/index.html) to GitHub Pages.
+# One-time setup: repo Settings → Pages → Source = "GitHub Actions".
+# The page is regenerated from SKILL.md / agent frontmatter on every push to main,
+# so the public storefront never drifts from the library.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Regenerate the explorer from frontmatter
+        run: python3 scripts/generate-explorer.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: explorer
+      - id: deploy
+        uses: actions/deploy-pages@v4

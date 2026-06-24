@@ -6,6 +6,20 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Adoption layer — get end users productive fast.** Four features that make the library easy to pick
+  up and use, without adding any new skills:
+  - **Hosted explorer (GitHub Pages).** `.github/workflows/pages.yml` regenerates and publishes the
+    Agent & Skill Explorer to `https://vindreshsingh.github.io/engineering-skills/` on every push to
+    `main`, so it's publicly browsable/shareable. (One-time: Settings → Pages → Source = GitHub Actions.)
+  - **`/start` onboarding command.** Detects the project's stack and shape and recommends the 3–5 skills,
+    a profile, and the lifecycle chain that fit *this* repo — instead of dumping all 64 skills.
+  - **Skill profiles.** `profiles/` (`frontend`, `backend`, `full-stack`, `solo-founder`) scope which
+    skills the session-start hook tells the agent to prioritize. Activate via a one-word
+    `.engineering-skills-profile` file or `ENGINEERING_SKILLS_PROFILE`; everything stays reachable via
+    `skill-router` and `agent-guardrails` stays always-on.
+  - **Before/after code examples.** `docs/examples/` shows the same task done without a skill vs with it
+    (`test-first`, `hardening`, `simplify`) — proving the code-quality lift concretely.
+  README counts refreshed (64 skills); `skill-router` gains a `/start` onboarding entry.
 - **Agent & Skill Explorer (local web page).** A self-contained, zero-dependency `explorer/index.html`
   (served at `localhost:8000`) that lists every skill and agent grouped by lifecycle phase, with search,
   phase/group filters, and a "copy prompt" button that composes a ready-to-paste Claude Code prompt
