@@ -52,7 +52,14 @@ for p in skill_paths:
     fm, _ = frontmatter(p)
     name = fm.get("name") or os.path.basename(os.path.dirname(p))
     group = "marketing" if "/marketing/" in p or p.endswith("marketing/SKILL.md") else "engineering"
-    skills.append({"name": name, "description": fm.get("description", ""), "group": group})
+    skills.append(
+        {
+            "name": name,
+            "description": fm.get("description", ""),
+            "group": group,
+            "src": os.path.relpath(p, ROOT),
+        }
+    )
 
 # ---- commands -> skill --------------------------------------------------
 # Meta commands reference a skill in passing but aren't "the command for" it.
@@ -121,11 +128,26 @@ for s in skills:
 if any(s["phase"] == OTHER for s in skills) and OTHER not in phase_order:
     phase_order.append(OTHER)
 
+# Repo coordinates for "view source" links — derived from the git remote.
+import subprocess
+
+repo_slug = "vindreshsingh/engineering-skills"
+try:
+    url = subprocess.check_output(
+        ["git", "config", "--get", "remote.origin.url"], cwd=ROOT, text=True
+    ).strip()
+    m = re.search(r"github\.com[:/](.+?)(?:\.git)?$", url)
+    if m:
+        repo_slug = m.group(1)
+except Exception:
+    pass
+
 data = {
     "phases": phase_order,
     "skills": sorted(skills, key=lambda s: s["name"]),
     "agents": sorted(agents, key=lambda a: a["name"]),
     "counts": {"skills": len(skills), "agents": len(agents), "phases": len(phase_order)},
+    "repo": {"slug": repo_slug, "branch": "main"},
 }
 
 template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "explorer-template.html")
