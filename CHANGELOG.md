@@ -6,6 +6,11 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- **Explorer v2 — the storefront becomes a shareable reference.** Each skill/agent card now links to
+  its source on GitHub ("View source"), agent cards link their primary skill (click to jump to it),
+  the header has a one-click "Copy install command" and a "View on GitHub" link, and skills are
+  deep-linkable (`…/#hardening` opens pre-filtered to that skill). Source paths and repo coordinates are
+  derived in `scripts/generate-explorer.py`, so the links never drift.
 - **Adoption layer — get end users productive fast.** Four features that make the library easy to pick
   up and use, without adding any new skills:
   - **Hosted explorer (GitHub Pages).** `.github/workflows/pages.yml` regenerates and publishes the

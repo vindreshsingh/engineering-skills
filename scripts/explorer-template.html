@@ -53,10 +53,18 @@
   .badge.grp { color: var(--accent-2); border-color: #2c4a32; background: #11241a; }
   .cmd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--accent-2); background: #0f1a14; border: 1px solid #213024; border-radius: 6px; padding: 1px 7px; }
   .desc { color: #c9d4e0; font-size: 13.5px; margin: 2px 0 12px; flex: 1; }
-  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
   .btn { background: var(--panel-2); border: 1px solid var(--border); color: var(--text); border-radius: 8px; padding: 7px 11px; font-size: 12.5px; cursor: pointer; font-weight: 600; }
   .btn:hover { border-color: var(--accent); color: var(--accent); }
   .btn.copied { border-color: var(--accent-2); color: var(--accent-2); }
+  .src { font-size: 12.5px; color: var(--muted); border: 1px solid var(--border); border-radius: 8px; padding: 7px 11px; font-weight: 600; }
+  .src:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .header-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .header-actions .btn, .header-actions .src { font-size: 13px; padding: 8px 14px; }
+  .badge.link { cursor: pointer; }
+  .badge.link:hover { color: var(--accent-2); border-color: var(--accent-2); }
+  .name.anchor { cursor: pointer; }
+  .name.anchor:hover { color: var(--accent); }
   .muted { color: var(--muted); }
   .empty { color: var(--muted); padding: 40px 0; text-align: center; }
   footer { margin-top: 40px; color: var(--muted); font-size: 12.5px; border-top: 1px solid var(--border); padding-top: 16px; }
@@ -70,6 +78,10 @@
     <h1>Agent &amp; Skill Explorer</h1>
     <p>Browse the <code>engineering-skills</code> library — pick a skill or agent, scope it to your repo, and copy a ready-to-paste Claude&nbsp;Code prompt.</p>
     <div class="counts" id="counts"></div>
+    <div class="header-actions">
+      <button class="btn" id="install-btn" onclick="copyInstall(this)">Copy install command</button>
+      <a class="src" id="repo-link" target="_blank" rel="noopener">View on GitHub ↗</a>
+    </div>
   </header>
 
   <div class="controls">
@@ -101,7 +113,25 @@ const DATA = /*__DATA__*/null;
 let tab = 'skills';
 let filter = 'All';
 
+const REPO = (DATA.repo && DATA.repo.slug) || 'vindreshsingh/engineering-skills';
+const BRANCH = (DATA.repo && DATA.repo.branch) || 'main';
+const INSTALL_CMD = `/plugin marketplace add ${REPO}\n/plugin install engineering-skills@engineering-skills`;
+function srcUrl(path) { return `https://github.com/${REPO}/blob/${BRANCH}/${path}`; }
+
 function ctx() { return document.getElementById('ctx').value.trim(); }
+
+function copyInstall(btn) { copy(INSTALL_CMD, btn); }
+
+// Jump from an agent's primary-skill badge to that skill.
+function gotoSkill(name) {
+  tab = 'skills'; filter = 'All';
+  document.getElementById('tab-skills').classList.add('active');
+  document.getElementById('tab-agents').classList.remove('active');
+  document.getElementById('search').value = name;
+  if (history.replaceState) history.replaceState(null, '', '#' + name);
+  render();
+}
+function anchor(name) { if (history.replaceState) history.replaceState(null, '', '#' + name); }
 
 function skillPrompt(s) {
   const base = s.command
@@ -157,15 +187,16 @@ function render() {
     const phases = (filter === 'All' ? DATA.phases : [filter]).filter(p => items.some(s => s.phase === p));
     results.innerHTML = phases.length ? phases.map(p => {
       const cards = items.filter(s => s.phase === p).map(s => `
-        <div class="card">
+        <div class="card" id="skill-${esc(s.name)}">
           <div class="top">
-            <span class="name">${esc(s.name)}</span>
+            <span class="name anchor" onclick="anchor('${esc(s.name)}')" title="Link to this skill">${esc(s.name)}</span>
             <span class="badge phase">${esc(s.phase)}</span>
             ${s.command ? `<span class="cmd">${esc(s.command)}</span>` : ''}
           </div>
           <div class="desc">${esc(s.description)}</div>
           <div class="actions">
             <button class="btn" onclick="copySkill('${esc(s.name)}', this)">Copy prompt</button>
+            <a class="src" href="${srcUrl(s.src)}" target="_blank" rel="noopener">View source ↗</a>
           </div>
         </div>`).join('');
       return `<div class="section-title">${esc(p)} <span class="n">${items.filter(s => s.phase === p).length}</span></div><div class="grid">${cards}</div>`;
@@ -179,11 +210,12 @@ function render() {
           <div class="top">
             <span class="name">${esc(a.name)}</span>
             <span class="badge grp">${g === 'sdlc' ? 'SDLC' : 'marketing'}</span>
-            ${a.primarySkill ? `<span class="cmd">${esc(a.primarySkill)}</span>` : ''}
+            ${a.primarySkill ? `<span class="badge link" onclick="gotoSkill('${esc(a.primarySkill)}')" title="Go to this skill">${esc(a.primarySkill)} ↗</span>` : ''}
           </div>
           <div class="desc">${esc(a.description)}</div>
           <div class="actions">
             <button class="btn" onclick="copyAgent('${esc(a.name)}', this)">Copy prompt</button>
+            <a class="src" href="${srcUrl(a.path)}" target="_blank" rel="noopener">View source ↗</a>
           </div>
         </div>`).join('');
       return `<div class="section-title">${g === 'sdlc' ? 'SDLC' : 'Marketing'} agents <span class="n">${items.filter(a => a.group === g).length}</span></div><div class="grid">${cards}</div>`;
@@ -193,7 +225,15 @@ function render() {
 
 document.getElementById('counts').innerHTML =
   `<span><b>${DATA.counts.skills}</b> skills</span><span><b>${DATA.counts.agents}</b> agents</span><span><b>${DATA.counts.phases}</b> lifecycle phases</span>`;
+document.getElementById('repo-link').href = `https://github.com/${REPO}`;
+
+// Deep link: #skill-name opens the Skills tab pre-filtered to that skill.
+const hash = decodeURIComponent((location.hash || '').replace(/^#/, '')).trim();
+if (hash && DATA.skills.some(s => s.name === hash)) {
+  document.getElementById('search').value = hash;
+}
 render();
+if (hash) { const el = document.getElementById('skill-' + hash); if (el) el.scrollIntoView({ block: 'center' }); }
 </script>
 </body>
 </html>
