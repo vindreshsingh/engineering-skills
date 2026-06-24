@@ -129,15 +129,16 @@ into a full **discover → build → launch** arc.
 
 | Phase   | Skills |
 |---------|--------|
-| Define  | `spec-first`, `product-brief`, `idea-shaping` |
-| Plan    | `work-planning`, `product-grooming` |
-| Build   | `incremental-delivery`, `test-first`, `ui-craft`, `ux-design`, `accessibility`, `react-patterns`, `mobile-patterns`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `caching-strategy`, `llm-feature-engineering`, `i18n-l10n` |
-| Verify  | `browser-checks`, `e2e-testing`, `fault-recovery` |
-| Review  | `review-gate`, `simplify`, `hardening`, `perf-budget`, `dependency-hygiene` |
-| Ship    | `git-flow`, `pipeline-ops`, `migration-path`, `decision-docs`, `technical-writing`, `launch-readiness` |
+| Define  | `product-discovery`, `idea-shaping`, `product-brief`, `spec-first` |
+| Plan    | `work-planning`, `product-grooming`, `threat-modeling` |
+| Build   | `incremental-delivery`, `test-first`, `context-curation`, `source-first`, `ui-craft`, `micro-interactions`, `ux-design`, `accessibility`, `react-patterns`, `mobile-patterns`, `i18n-l10n`, `interface-design`, `design-handoff`, `resilience`, `data-modeling`, `caching-strategy`, `llm-feature-engineering` |
+| Verify  | `browser-checks`, `e2e-testing`, `contract-testing`, `fault-recovery`, `experimentation` |
+| Review  | `review-gate`, `simplify`, `hardening`, `perf-budget`, `dependency-hygiene`, `version-upgrade` |
+| Ship    | `git-flow`, `pipeline-ops`, `feature-flags`, `migration-path`, `decision-docs`, `technical-writing`, `launch-readiness` |
 | Operate | `observability`, `incident-response`, `finops-budget` |
-| Grow    | `skills/marketing/*` — see [marketing/README.md](marketing/README.md) |
-| Meta    | `agent-guardrails` (always on), `skill-router`, `skill-creator` |
+| Grow    | `launch-campaign` (conductor), `growth-strategy`, `content-marketing`, `social-distribution`, `seo-growth`, `community-engagement`, `paid-ads`, `email-nurture`, `referral-loop` — under `skills/marketing/`, see [marketing/README.md](marketing/README.md) |
+| Operate autonomously | `autonomous-loops` (conductor), `long-running-agents`, `agent-verification`, `agent-memory` |
+| Meta    | `agent-guardrails` (always on), `skill-router`, `skill-creator`, `skill-harvest`, `orchestrated-delivery`, `parallel-subagents` |
 
 See [SKILLS.md](SKILLS.md) for the full auto-generated catalog. **End-to-end example:**
 [docs/sdlc-walkthrough.md](docs/sdlc-walkthrough.md).
