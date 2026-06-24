@@ -25,7 +25,7 @@ agent into something closer to a disciplined engineering team.
 - **It covers the whole lifecycle, not just the dev loop.** Define → plan → build → verify → review →
   ship → operate — plus a **38-role org** of personas (product manager, architect, DBA, QA, SRE,
   release manager… and a marketing team).
-- **The skills are behaviorally tested.** Most skill files are just good advice. Here, over half the
+- **The skills are behaviorally tested.** Most skill files are just good advice. Here, every
   skills have a *pressure-scenario test* that proves the skill changes what the agent does — watch it
   cut the corner without the skill, then hold the line with it. CI enforces it.
 - **There's an orchestrated build loop.** `orchestrated-delivery` conducts a feature through every
