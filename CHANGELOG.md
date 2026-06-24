@@ -5,6 +5,17 @@ All notable changes to this project are documented here. This project adheres to
 
 ## [Unreleased]
 
+## [1.6.0] - 2026-06-24
+
+Highlights: **64 skills** (up from 53) including a full **discover → build → launch** arc
+(`product-discovery`, `launch-campaign`), an **Operate-Autonomously** cluster for running agents in
+loops and over long horizons (`autonomous-loops`, `long-running-agents`, `agent-verification`,
+`agent-memory`), a self-improving loop (`skill-harvest`), and structural-gap skills
+(`threat-modeling`, `experimentation`, `feature-flags`, `contract-testing`). Plus an **adoption layer**
+— a hosted [Agent & Skill Explorer](https://vindreshsingh.github.io/engineering-skills/), a `/start`
+onboarding command, skill profiles, and before/after code examples. 100% behavioral-test coverage held
+throughout; everything shipped via reviewed PRs with CI.
+
 ### Added
 - **Explorer v2 — the storefront becomes a shareable reference.** Each skill/agent card now links to
   its source on GitHub ("View source"), agent cards link their primary skill (click to jump to it),
