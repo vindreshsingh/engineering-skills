@@ -87,6 +87,44 @@ git clone https://github.com/vindreshsingh/engineering-skills.git
 Per-tool install and usage: [`docs/platforms.md`](docs/platforms.md). General guide:
 [`docs/getting-started.md`](docs/getting-started.md).
 
+## How it works
+
+Every task enters through `skill-router` (or `/start`), which routes it to the one skill that governs
+that step — then chains to the next phase. `agent-guardrails` is always on; `skill-harvest` feeds
+lessons back so the library compounds.
+
+```mermaid
+flowchart TD
+    G["agent-guardrails — always on"]
+    S["/start · skill-router"]
+    G -.-> S
+    S --> DEF
+
+    subgraph LC["Lifecycle — skill-router routes each task to its skill"]
+      direction LR
+      DEF["Define<br/>product-discovery · spec-first"] --> PLN["Plan<br/>work-planning · threat-modeling"]
+      PLN --> BLD["Build<br/>incremental-delivery · test-first"]
+      BLD --> VER["Verify<br/>browser-checks · contract-testing · experimentation"]
+      VER --> REV["Review<br/>review-gate · hardening · simplify"]
+      REV --> SHP["Ship<br/>feature-flags · migration-path · launch-readiness"]
+      SHP --> OPS["Operate<br/>observability · incident-response"]
+      OPS --> GRW["Grow<br/>launch-campaign · growth-strategy"]
+    end
+
+    GRW -.learnings.-> DEF
+
+    subgraph X["Cross-cutting"]
+      direction LR
+      AUTO["Operate-Autonomously<br/>autonomous-loops · long-running-agents<br/>agent-verification · agent-memory"]
+      HARV["skill-harvest → skill-creator"]
+    end
+    BLD -.-> AUTO
+    GRW -.-> HARV
+```
+
+The bookends — `product-discovery` (`/discover`) and `launch-campaign` (`/launch`) — wrap the code loop
+into a full **discover → build → launch** arc.
+
 ## Skills by phase
 
 | Phase   | Skills |
@@ -129,9 +167,27 @@ Three general reviewer personas:
 - `security-auditor` — vulnerability detection, threat modeling, secure-coding review
 - `test-engineer` — test strategy, test writing, coverage analysis
 
-Plus a full **25-role SDLC org** spanning 8 layers and a **5-role growth team** (Layer 9) for
-marketing — positioning, content, social, SEO, and community. See [docs/agent-org.md](docs/agent-org.md)
-for the org map and how work flows between roles.
+Plus a full **30-role SDLC org** and an **8-role growth team** for marketing — positioning, content,
+social, SEO, and community. `orchestrated-delivery` conducts them across the lifecycle, dispatching
+independent work to parallel subagents. See [docs/agent-org.md](docs/agent-org.md) for the full org map.
+
+```mermaid
+flowchart TD
+    OD["orchestrated-delivery<br/>(conductor across phases)"]
+    OD --> PRD & ARC & ENG & QA & OPSR & SEC & DOC & GRW
+
+    PRD["Product<br/>product-manager · product-analyst<br/>business-analyst · scrum-master · product-grooming"]
+    ARC["Architecture<br/>solution-architect · technical-architect"]
+    ENG["Engineering<br/>frontend · backend · database · platform<br/>senior-developer · team-lead · engineering-manager"]
+    QA["Quality<br/>qa-engineer · sdet · test-engineer<br/>code-reviewer · technical-qc"]
+    OPSR["Ops & Reliability<br/>devops · site-reliability<br/>release-manager · incident-commander"]
+    SEC["Security & Risk<br/>security-architect · security-auditor<br/>compliance · risk-assessment · dependency-analyzer"]
+    DOC["Design & Docs<br/>ux-designer · technical-writer"]
+    GRW["Growth<br/>growth-lead · content-marketer · social-media-manager<br/>seo-strategist · community-manager · email · paid · referral"]
+```
+
+Each persona loads its primary skill and runs that skill's process — the agent is *who*, the skill is
+*how*.
 
 ## Repository layout
 
