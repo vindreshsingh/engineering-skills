@@ -62,6 +62,7 @@ Read the user's ask for **intent**, not keywords alone:
 | Launch a shipped feature — full go-to-market | Grow | [[launch-campaign]] |
 | Market product / grow traffic / SEO / social | Grow | [[growth-strategy]] — see `marketing/SKILL.md` and `skills/marketing/` |
 | Run an agent unattended, on a loop, or over many hours | Meta | [[autonomous-loops]] / [[long-running-agents]] |
+| New to this repo — which skills apply *here*? | Meta | run `/start` (detects stack, recommends a few skills + a profile) |
 | Not sure | Meta | Stay here; use maps below |
 
 If the request mixes phases ("build and ship today"), **still sequence** — define/plan may be a 5-minute

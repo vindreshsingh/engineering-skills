@@ -55,12 +55,17 @@ for p in skill_paths:
     skills.append({"name": name, "description": fm.get("description", ""), "group": group})
 
 # ---- commands -> skill --------------------------------------------------
+# Meta commands reference a skill in passing but aren't "the command for" it.
+META_COMMANDS = {"start"}
 cmd_for_skill = {}
 for p in sorted(glob.glob(os.path.join(ROOT, "commands/*.md"))):
+    cmd_name = os.path.basename(p)[:-3]
+    if cmd_name in META_COMMANDS:
+        continue
     _, text = frontmatter(p)
     skill = first_skill_ref(text)
     if skill:
-        cmd_for_skill[skill] = "/" + os.path.basename(p)[:-3]
+        cmd_for_skill[skill] = "/" + cmd_name
 
 # ---- agents -------------------------------------------------------------
 agents = []

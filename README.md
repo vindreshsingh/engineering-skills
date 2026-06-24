@@ -2,11 +2,11 @@
 
 [![validate](https://github.com/vindreshsingh/engineering-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/vindreshsingh/engineering-skills/actions/workflows/validate.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![skills: 53](https://img.shields.io/badge/skills-53-brightgreen)
+![skills: 64](https://img.shields.io/badge/skills-64-brightgreen)
 ![behaviorally tested: 100%](https://img.shields.io/badge/behaviorally%20tested-100%25-success)
 
 **Turn your AI coding agent into a disciplined engineering team.** A reusable, agent-agnostic library
-of **53 production-grade engineering skills** — each a step-by-step process with verification, not
+of **64 production-grade engineering skills** — each a step-by-step process with verification, not
 reference docs — plus a **40-role SDLC & marketing org** and an **orchestrated build loop** that
 conducts a feature end to end.
 
@@ -52,8 +52,25 @@ Or wire it into a project declaratively in `.claude/settings.json`:
 }
 ```
 
-This makes all **50 skills**, **38 agents** (30 SDLC + 8 marketing), and session hooks available in
+This makes all **64 skills**, **38 agents** (30 SDLC + 8 marketing), and session hooks available in
 that project. See [docs/plugin-discovery.md](docs/plugin-discovery.md) for load paths.
+
+## Start here (first 5 minutes)
+
+64 skills is a lot — you don't pick from all of them. Get going fast:
+
+1. **Run `/start`** in any repo. It detects your stack and recommends the *3–5 skills and the workflow*
+   that fit this project — not the whole catalog.
+2. **Set a profile** to scope the emphasis to your kind of work — `frontend`, `backend`, `full-stack`,
+   or `solo-founder` ([profiles/](profiles/README.md)):
+   ```bash
+   echo full-stack > .engineering-skills-profile
+   ```
+3. **Browse the [live explorer](https://vindreshsingh.github.io/engineering-skills/)** when you want to
+   see everything and copy a ready-to-paste prompt.
+
+**See the lift in code:** [before / after examples](docs/examples/README.md) — the same task done
+without a skill vs with it.
 
 ## Use with any other agent
 
@@ -87,10 +104,13 @@ Per-tool install and usage: [`docs/platforms.md`](docs/platforms.md). General gu
 See [SKILLS.md](SKILLS.md) for the full auto-generated catalog. **End-to-end example:**
 [docs/sdlc-walkthrough.md](docs/sdlc-walkthrough.md).
 
-## Explore (local web page)
+## Explore
 
 A self-contained Agent & Skill Explorer — browse every skill and agent grouped by lifecycle phase,
-search, and copy a ready-to-paste Claude Code prompt (optionally scoped to a repo/task):
+search, and copy a ready-to-paste Claude Code prompt (optionally scoped to a repo/task).
+
+**Live:** [vindreshsingh.github.io/engineering-skills](https://vindreshsingh.github.io/engineering-skills/)
+(auto-published from `main`). Or run it locally:
 
 ```bash
 python3 scripts/generate-explorer.py          # regenerate explorer/index.html from frontmatter

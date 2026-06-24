@@ -35,6 +35,29 @@ if os.path.isfile(router):
 if os.path.isfile(marketing):
     parts.append(open(marketing).read())
 
+# Optional profile: scopes which skills to prioritize for this project.
+# Source: ENGINEERING_SKILLS_PROFILE env var, or a .engineering-skills-profile file in the project root.
+import re
+profile_note = ""
+project_dir = os.environ.get("CLAUDE_PROJECT_DIR") or os.getcwd()
+profile = os.environ.get("ENGINEERING_SKILLS_PROFILE", "").strip()
+if not profile:
+    pf = os.path.join(project_dir, ".engineering-skills-profile")
+    if os.path.isfile(pf):
+        try:
+            profile = open(pf).readline().strip()
+        except OSError:
+            profile = ""
+profile = profile.lower()
+if re.fullmatch(r"[a-z-]+", profile or ""):
+    profile_path = os.path.join(plugin_root, "profiles", profile + ".md")
+    if os.path.isfile(profile_path):
+        parts.append(open(profile_path).read())
+        profile_note = (
+            "\n\nACTIVE PROFILE: '%s' — prioritize the skills it lists for this repo (every skill is "
+            "still reachable via skill-router; agent-guardrails stays always-on)." % profile
+        )
+
 intro = (
     "engineering-skills loaded.\n\n"
     "THE RULE: If there is even a ~1% chance a skill applies to what you are about to do, "
@@ -50,6 +73,6 @@ intro = (
     "that finally worked, or a skill that misfired — run skill-harvest before the session ends to "
     "capture the lesson back into the library. Don't let hard-won lessons evaporate with the context."
 )
-msg = intro + "\n\n" + "\n\n---\n\n".join(parts)
+msg = intro + profile_note + "\n\n" + "\n\n---\n\n".join(parts)
 print(json.dumps({"priority": "IMPORTANT", "message": msg}))
 PY
