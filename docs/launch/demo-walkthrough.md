@@ -1,7 +1,7 @@
 # Demo: shipping "Add Product Reviews" with the org
 
 This is the differentiator made concrete. One request — *"Add product reviews"* — driven end to end by
-`orchestrated-delivery` conducting the 40-role org. Each phase shows the **persona**, the **skill it
+`orchestrated-delivery` conducting the 38-role org. Each phase shows the **persona**, the **skill it
 runs**, the **gate** it must clear, and a sample of what it produces. This is what "an engineering team
 in a repo" actually looks like in a session.
 
@@ -83,7 +83,7 @@ Instead of coding, it writes a one-page spec:
 
 ## Why this is the pitch
 
-No other skills library can run this: it requires **both** the 40-role org *and* a conductor that knows
+No other skills library can run this: it requires **both** the 38-role org *and* a conductor that knows
 which skill and persona to load at each gate. The skills above aren't named for show — each is a real,
 **behaviorally-tested** process (100% coverage, CI-enforced). That's the demo: *paste the request, watch
 a disciplined team deliver it.*

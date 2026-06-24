@@ -28,8 +28,8 @@ marketplace listing:
 Open a PR to `awesome-claude-code`, `awesome-ai-coding`, `awesome-cursor`, etc. with:
 
 ```markdown
-- [engineering-skills](https://github.com/vindreshsingh/engineering-skills) — 53 behaviorally-tested
-  engineering skills + a 40-role SDLC & marketing org + an orchestrated build loop. Works with Claude
+- [engineering-skills](https://github.com/vindreshsingh/engineering-skills) — 64 behaviorally-tested
+  engineering skills + a 38-role SDLC & marketing org + an orchestrated build loop. Works with Claude
   Code, Cursor, Gemini, Copilot, and Codex.
 ```
 
